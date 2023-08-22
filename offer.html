@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrollTrigger Fade In/Out</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .section {
+      height: 200vh; /* Increased for demonstration */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .fade-text {
+      opacity: 0;
+    }
+
+    .tty {
+      height: 100vh;
+      width: 100vw;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="tty">erte</div>
+  <div class="section">
+    <div class="content fade-text">
+      <h1 class="">ScrollTrigger Example</h1>
+      <p class="">Scroll down to see the fade in/out effect.</p>
+    </div>
+  </div>
+  <div class="tty">erte</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const fadeTextElements = document.querySelectorAll('.fade-text');
+
+    fadeTextElements.forEach((element) => {
+      gsap.to(element, {
+        opacity: 1,
+        
+        scrollTrigger: {
+          trigger: element,
+          markers: true,
+          start: 'top 60%',
+          end: 'bottom 30%',
+          toggleActions: 'play none reverse none',
+          onEnter: () => {
+            element.style.opacity = 1;
+            element.style.pointerEvents = 'auto';
+            
+          },
+          onLeave: () => {
+            element.style.opacity = 0;
+            element.style.pointerEvents = 'none';
+            
+          },
+          onEnterBack: () => {
+            element.style.opacity = 1;
+            element.style.pointerEvents = 'auto';
+            
+          },
+          onLeaveBack: () => {
+            element.style.opacity = 0;
+            element.style.pointerEvents = 'none';
+            
+          },
+         
+        },
+      });
+    });
+  </script>
+</body>
+</html>

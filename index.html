@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+
+ <!-- AOS  -->
+ <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "#000000",
+              },
+              secondary: {
+                DEFAULT: "#2c71f6",
+              },
+              accent: {
+                DEFAULT: "#37cdbe",
+              },
+              neutral: {
+                DEFAULT: "#3d4451",
+              },
+              "base-100": {
+                DEFAULT: "#ffffff",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    
+  </head>
+  <body>
+  
+
+    <div id="main">
+      <div class="h-screen bg-red-400"></div>
+      <div class="tt"></div>
+     
+      <div id="page"  >
+       <div class="flex justify-center h-screen " >
+        <h1 class="text-5xl my-5 bg-green-400 z-30 " >Pourquoi faire une étude de marché ? </h1>
+       </div>
+
+       <div class="website-section z-30 bg-blue-400">
+        <div class="js-content-opacity">Pourquoi faire une étude de marché ?</div>
+        <div class="js-content-opacity"></div>
+        <div class="js-content-opacity"></div>
+
+      </div>
+        <canvas id="canvas"></canvas>
+      </div>
+      <div id="page1" class="z-10">
+        <div id="right-text">
+          <h3 >CYBERFICTION / KEY WORD</h3>
+          <h1>
+            HAVE FUN
+            <br />
+            LET'S PLAY
+            <br />
+            JUST BE TOGETHER
+          </h1>
+        </div>
+        <div id="left-text">
+          <h1>
+            MAKE A STORY
+            <br />
+            TAKE A CHANCE
+            <br />
+            BUILD AND OWNED
+          </h1>
+          <h3>..AND MAINTAIN GOOD HUMANITY</h3>
+        </div>
+      </div>
+      <div id="page2">
+        <div id="text1">
+          <h3>CYBERFICTION / HAVE FUN</h3>
+          <h1>
+            LET'S
+            <br />
+            HAVE FUN
+            <br />
+            TOGETHER
+          </h1>
+        </div>
+        <div id="text2">
+          <p>
+            LET'S HAVE A BLAST! LET'S JUST THROW AWAY AGE, GENDER, REGION,
+            <br />
+            STATUS, ETC., DON'T COMPETE, DON'T FIGHT, COOPERATE AND SHARE <br />
+            WITH EACH OTHER AND ENJOY IT TOGETHER! SO THAT YOU CAN STAND <br />
+            THERE IN THE NOT-TOO-DISTANT FUTURE AND DREAM OF ANOTHER NEW <br />
+            FUTURE
+          </p>
+        </div>
+      </div>
+      <div id="page3">
+        <div id="text3">
+          <h3>CYBERFICTION / PLAYGROUND</h3>
+          <h1>
+            CYBERFIELD
+            <br />
+            IS OUR
+            <br />
+            PLAYGROUND
+          </h1>
+        </div>
+      </div>
+      <div id="page4"></div>
+
+
+      <div class="tt"></div>
+      
+       
+     
+      
+    </div>
+   
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+      integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+   
+
+
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  </body>
+</html>
