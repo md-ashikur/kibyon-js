@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kibyon</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "#000000",
+              },
+              secondary: {
+                DEFAULT: "#2c71f6",
+              },
+              accent: {
+                DEFAULT: "#37cdbe",
+              },
+              neutral: {
+                DEFAULT: "#3d4451",
+              },
+              "base-100": {
+                DEFAULT: "#ffffff",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+
+
+.contactForm .inputBox input,
+  .contactForm textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 14px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none !important; /* Remove the default outline */
+    resize: none;
+  }
+  
+  .contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 14px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+    
+  }
+  
+  /* Apply styles when the input is focused */
+  .contactForm .inputBox input:focus,
+  .contactForm .inputBox textarea:focus {
+    border-bottom: 1px solid #2c71f6; /* Example: change the bottom border color when focused */
+  }
+  
+  .contactForm .inputBox input:focus~span,
+  .contactForm .inputBox input:valid~span,
+  .contactForm .inputBox textarea:focus~span,
+  .contactForm .inputBox textarea:valid~span {
+    color: #2c71f6;
+    font-size: 12px;
+    transform: translateY(-20px);
+  
+  }
+    </style>
+  </head>
+  <body class="bg-[#0223b0]">
+    <!-- navbar start=================== -->
+    <nav class="page-wrapper">
+      <div class="nav-wrapper">
+        <div class="grad-bar"></div>
+        <nav class="navbar lg:px-20">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Bluestar_%28bus_company%29_logo.svg/1280px-Bluestar_%28bus_company%29_logo.svg.png"
+            alt="Company Logo"
+          />
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="nav no-search">
+            <li class="nav-item"><a href="index.html">Accueil</a></li>
+            <li class="nav-item"><a href="offer.html">Nos offres</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
+            <li class="nav-item">
+              <a href="about.html">A propos de Kibyon</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </nav>
+    <script>
+      $("#search-icon").click(function () {
+        $(".nav").toggleClass("search");
+        $(".nav").toggleClass("no-search");
+        $(".search-input").toggleClass("search-active");
+      });
+
+      $(".menu-toggle").click(function () {
+        $(".nav").toggleClass("mobile-nav");
+        $(this).toggleClass("is-active");
+      });
+    </script>
+    <!-- navbar end==============================  -->
+
+    <main class="pt-20 text-white flex justify-center">
+   <section class="max-w-[1500px] ">
+    <div class="flex flex-col justify-center items-center text-center">
+        <h1 class="lg:text-5xl text-3xl font-bold py-2">Contactez-nous</h1>
+        <p class="p-2 max-w-[750px] text-lg">
+          Concrétisez vos projets avec Kibyon ! Si vous avez une question, une
+          demande particulière ou pour tout autres besoins contactez-nous.
+        </p>
+      </div>
+
+      <div
+        class="grid lg:grid-cols-2 gap-5 lg:px-20 px-5 py-10 mt-10 overflow-hidden"
+      >
+        <!-- contact info start---------  -->
+        <div >
+          <div class="mb-5">
+            <h2 class="lg:text-3xl text-2xl font-bold">Pourquoi nous contacter ?</h2>
+            <p class="text-justify lg:pr-28 max-w-[500px]">
+              Bénéficiez de l'expertise de notre équipe passionnée pour
+              transformer vos idées en succès concret. Profitez d'un premier
+              échange gratuit et sans engagement pour comprendre pourquoi notre
+              accompagnement personnalisé fera toute la différence dans votre
+              parcours entrepreneurial. Faites le premier pas vers un avenir
+              prometteur en nous contactant dès maintenant ! Votre futur et
+              celui de vos projets s’écrivent dés aujourd’hui, ensemble donnons
+              vie à votre vision.
+            </p>
+          </div>
+
+          <div class="mb-5">
+            <h2 class="lg:text-3xl text-2xl font-bold">Adresse</h2>
+            <p>71 route de la prieurée, 45110 Germigny-des-prés</p>
+          </div>
+
+          <div class="mb-5">
+            <h2 class="lg:text-3xl text-2xl font-bold">N° de télépohne</h2>
+            <p>+33 (0)645142367</p>
+          </div>
+
+          <div class="mb-5">
+            <h2 class="lg:text-3xl text-2xl font-bold">Mail</h2>
+            <p>contact@kibyon.fr</p>
+          </div>
+        </div>
+
+
+
+        <!-- form- start------------- -->
+        <div class="bg-base-100 px-10 py-16 rounded-lg  max-w-[600px] text-[#556275]">
+            <h2 class="text-3xl font-semibold pb-8">Envoyer un message</h2>
+          <form class="contactForm">
+            <!-- {/* name---------- */} -->
+            <div class="relative inputBox">
+              <input
+                class="border-b-2 "
+                required="required"
+                type="text"
+                name="name"
+              />
+              <span>NOM</span>
+            </div>
+            <!-- {/* sure name------------ */} -->
+            <div class="relative inputBox">
+              <input
+                class="border-b-2 "
+                required="required"
+                type="text"
+                name="surename"
+              />
+              <span>Prénom</span>
+            </div>
+            <!-- {/* ----email-------------------------- */} -->
+            <div class="inputBox relative my-3">
+              <input
+                class="border-b-2 "
+                required="required"
+                type="text"
+                name="email"
+              />
+              <span class="my-5">Adresse Mail</span>
+            </div>
+            <!-- {/* ------------------------------------ */} -->
+            <div class="inputBox relative my-3">
+              <textarea
+                class="border-b-2 "
+                required="required"
+                type="text"
+                name="message"
+              ></textarea>
+              <span>Ecrivez votre message ici.</span>
+            </div>
+            <!-- {/* ------------------------------------ */} -->
+            <input
+              type="submit"
+              value="Envoyer"
+              class="cursor-pointer w-full bg-primary hover:bg-[#022bbf] hover:scale-105 duration-150 p-3 rounded-lg hover:text-white text-white duration-500  hover:text-secondary font-semibold  hover:border hover:border-secondary"
+            />
+          </form>
+
+         
+
+         
+        </div>
+
+        <!-- form end-------------- -->
+      </div>
+   </section>
+    </main>
+  </body>
+</html>

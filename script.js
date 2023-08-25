@@ -1845,7 +1845,7 @@ gsap.to(imageSeq, {
     scrub: 0.15,
     trigger: `#page>canvas`,
     start: `top top`,
-    end: `2500% top`,
+    end: `3800% top`,
     scroller: `#main`,
   },
   onUpdate: render,
@@ -1883,7 +1883,7 @@ ScrollTrigger.create({
   // markers:true,
   scroller: `#main`,
   start: `top top`,
-  end: `2500% top`,
+  end: `3800% top`,
 });
 
 
