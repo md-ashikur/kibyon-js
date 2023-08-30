@@ -235,7 +235,22 @@ html,body{
   }
 /* navbar end */
 
+/* home page start================= */
 
+#planePart{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+ z-index: 20;
+}
+
+
+#page5{
+  height:20vh;
+  position: relative;
+  width: 100vw;
+}
+/* home page start================= */
 
 .tt{
   background-image: url("./img/Offre unique/Offre unique without object.jpg");
@@ -283,6 +298,8 @@ html,body{
     position: relative;
     width: 100vw;
 }
+
+
 canvas{
     position: relative;
     z-index: 9;
@@ -312,28 +329,6 @@ canvas{
 
 
 
-#nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 7%;
-    width: 100%;
-    position: fixed;
-    z-index: 99;
-    padding: 0px 30px;
-}
-#nav>h3{
-    font-family: gilroy;
-    font-weight: 400;
-    font-size: 22px;
-}
-#nav>button{
-    padding: 10px 20px;
-    border-radius: 50px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-}
 
 
 

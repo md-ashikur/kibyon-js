@@ -158,8 +158,6 @@
   </div>
 
 
-
-
   <!-- section 3 start================ -->
   <section class="relative section3 "  id="sec3">
     <h1 class="title text-5xl text-center px-5 lg:px-20 text-white pt-28 ">Et si nous mettions nos compétences au service du plus grand nombre ?</h1>
@@ -219,14 +217,13 @@
 
 
 
-
-  <div id="page">
-   
-   
+<section>
+  
+  <div id="planePart">
    
     <canvas id="canvas"></canvas>
   </div>
-  <div id="page5" class="section z-20">
+  <div id="page1" class=" bg-blue-400 z-30 px-20">
     <div class="content fade-text">
       <h1 class="">ScrollTrigger Example</h1>
       <p class="">Scroll down to see the fade in/out effect.</p>
@@ -239,6 +236,7 @@
   
   <div class="h-screen"></div>
   <div class="h-screen bg-black"></div>
+</section>
  <!-- footer====================================== -->
 <footer>
 
@@ -444,22 +442,22 @@
 
 <script>
   const sec3 = document.getElementById("sec3");
-    const cursor = sec3.querySelector(".cursor");
+    const curs = sec3.querySelector(".cursor");
 
     sec3.addEventListener("mouseenter", () => {
-      cursor.style.mixBlendMode = "difference";
-      cursor.style.pointer = none;
+      curs.style.mixBlendMode = "difference";
+      curs.style.pointer = none;
     });
 
     sec3.addEventListener("mouseleave", () => {
-      cursor.style.mixBlendMode = "normal";
+      curs.style.mixBlendMode = "normal";
     });
 
     document.addEventListener('mousemove', (e) => {
       let x = e.pageX;
       let y = e.pageY;
-      cursor.style.left = (x - 22) + "px";
-      cursor.style.top = (y - 22) + "px";
+      curs.style.left = (x - 22) + "px";
+      curs.style.top = (y - 22) + "px";
   });
 </script>
   </body>

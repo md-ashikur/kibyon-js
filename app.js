@@ -207,7 +207,7 @@ function locomotive() {
     ease: `none`,
     scrollTrigger: {
       scrub: 0.15,
-      trigger: `#page>canvas`,
+      trigger: `#planePart>canvas`,
       start: `top top`,
       end: `3800% top`,
       scroller: `#main`,
@@ -242,7 +242,7 @@ function locomotive() {
     );
   }
   ScrollTrigger.create({
-    trigger: "#page>canvas",
+    trigger: "#planePart>canvas",
     pin: true,
     // markers:true,
     scroller: `#main`,
