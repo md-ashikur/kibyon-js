@@ -30,8 +30,8 @@ html,body{
     background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
     background-size: 400% 400%;
         -webkit-animation: gradbar 15s ease infinite;
-      -moz-animation: gradbar 15s ease infinite;
-      animation: gradbar 15s ease infinite;
+      -moz-animation: gradbar 5s ease infinite;
+      animation: gradbar 5s ease infinite;
   }
   
   /* NAVIGATION */
@@ -45,12 +45,7 @@ html,body{
 
   }
   
-  .navbar img {
-    height: 16px;
-    width: auto;
-    justify-self: start;
-    margin-left: 20px;
-  }
+
   
   .navbar ul {
     list-style: none;
@@ -243,7 +238,7 @@ html,body{
 
 
 .tt{
-    height: 100vh;
+  background-image: url("./img/Offre unique/Offre unique without object.jpg");
     background-color: #11859f;
     z-index: 30;
     position: relative;
@@ -305,18 +300,7 @@ canvas{
     white-space: nowrap;
     background-color: #f1f1f1;
 }
-#loop>h1{
-    font-weight: 400;
-    animation-name: anim;
-    animation-duration: 15s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-#loop>h1>span{
-    -webkit-text-stroke: 1.2px #000;
-    color: transparent;
-    font-weight: 500;
-}
+
 @keyframes anim{
     0%{
         transform: translateX(0%);
@@ -350,85 +334,57 @@ canvas{
     color: #fff;
     border: none;
 }
-#page>h3{
-    position: absolute;
-    top: 55%;
-    font-family: gilroy;
-    font-weight: 400;
-    color: #7c7c7c;
-    left: 5%;
-}
-#page>h4{
-    position: absolute;
-    top: 62%;
-    left: 25%;
-    font-family: gilroy;
-    font-weight: 500;
-}
-#page1>#right-text{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-}
-#page1>#right-text>h3{
-    font-weight: 400;
-    color: #7c7c7c;
-}
-#page1>#right-text>h1{
-    line-height: 1.5;
-    font-size: 50px;
-}
-#page1>#left-text{
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    text-align: end;
-}
-#page1>#left-text>h1{
-    font-size: 50px;
-    line-height: 1.5;
-}
-#page1>#left-text>h3{
-    color: #7c7c7c;
-    font-weight: 400;
-}
-#page2>#text1{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-}
-#page2>#text1>h3{
-    color: #7c7c7c;
-    font-weight: 400;
-}
-#page2>#text1>h1{
-    font-size: 60px;
-    line-height: 1.5;
-}
-#page2>#text2{
-    position: absolute;
-    top: 55%;
-    right: 10%;
-    text-align: end;
-}
-#page2>#text2>p{
-    color: #7c7c7c;
-    font-weight: 400;
-}
-#page3>#text3{
-    position: absolute;
-    top: 40%;
-    right: 10%;
-    text-align: end;
-}
-#page3>#text3>h3{
-    color: #7c7c7c;
-    font-weight: 400;
-}
-#page3>#text3>h1{
-    font-size: 70px;
 
+
+
+/* home page section 3 start================ */
+
+
+
+
+.yolo {
+	display: flex;
+	justify-content: center;
+    background-color: black;
 }
+.werk {
+    font-family: 'Poppins', sans-serif;
+	font-size: 23vw;
+	text-align: center;
+	display: inline;
+	background: url("./img/bg2.png") 12% 50% no-repeat;
+	background-size: 99%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section3 {
+  width: 100vw;
+  height: auto;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+
+
+.cursor {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: normal;
+}
+
+.section3:hover .cursor {
+  mix-blend-mode: difference;
+}
+/* home page section 3 end================ */
+
+
 
 
 

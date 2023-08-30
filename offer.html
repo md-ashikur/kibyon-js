@@ -21,6 +21,15 @@
       rel="stylesheet"
     />
 
+
+
+    <!-- swiper js-------- -->
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+
     <!-- tailwind css  -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -50,6 +59,73 @@
     </script>
   <style>
    
+/* header start  */
+.flip-card {
+    background-color: transparent;
+    min-width: 220px;
+    height: 220px;
+    perspective: 1000px;
+    
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    
+  }
+  .cardBody:hover .cardText {
+    transition-duration: 0.7s ;
+    transform: scale(1.1);
+    color: #0332c8;
+    font-weight: 700;
+  }
+
+ 
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  
+  .flip-card-back {
+    
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  #myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+  
+  .content {
+    position: relative;
+    bottom: 0;
+    top: 1%;
+    color: #f1f1f1;
+    width: 100%;
+    
+  }
+/* header end */
+
+
+
     .section {
       height: 200vh; /* Increased for demonstration */
       display: flex;
@@ -72,6 +148,103 @@
     }
 
 
+    /* swiper start  */
+
+    
+.swiper {
+    max-width: 1200px !important;
+    padding-top: 20px;
+    padding-bottom: 70px;
+  }
+  
+  .swiper-slide {
+    background-position: center !important;
+    background-size: cover;
+    width: 300px;
+    height: 350px !important;
+    opacity: 0.7;
+    filter: blur(8px);
+    margin-right: 155px !important;
+  }
+  .swiper-slide-active{
+    opacity: 1;
+    filter: blur(0px);
+    padding: 10px !important;
+    width: 330px !important;
+    height: 350px !important;
+  }
+  .prev{
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    z-index: 10;
+    transition: 0.5s;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .prev:hover{
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    color: black;
+    padding: 2px;
+    border-radius: 50%;
+    transform:scale(1.2)
+  }
+  
+  .next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transition: 0.5s;
+    z-index: 10;
+    border-radius: 50%;
+  }
+  .next:hover{
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    color: black;
+    padding: 2px;
+    border-radius: 50%;
+    transform:scale(1.2)
+  }
+  
+  .swiper-pagination{
+    justify-content: center;
+    display: flex;
+    
+    position: relative;
+    top: 70px !important;
+  }
+  .swiper-pagination-bullet{
+    background-color: aliceblue !important;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .swiper-slide {
+      
+      margin-right: 22px !important;
+    }
+  }
+    /* swiper end */
+
+ /* =========section-4============== */
+ .card {
+
+background: rgba(255, 255, 255, 0.04);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.4px);
+-webkit-backdrop-filter: blur(6.4px);
+
+}
 
 
 
@@ -86,10 +259,7 @@
     <div class="nav-wrapper">
       <div class="grad-bar"></div>
       <nav class="navbar lg:px-20">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Bluestar_%28bus_company%29_logo.svg/1280px-Bluestar_%28bus_company%29_logo.svg.png"
-          alt="Company Logo"
-        />
+        <p class="text-2xl text-[#2c71f6]">Kibyon</p>
         <div class="menu-toggle" id="mobile-menu">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -145,8 +315,342 @@
 
 <!-- =================================== -->
 <div id="main">
-  <div class="h-screen bg-red-400"></div>
-  <div class="tt"></div>
+
+  <!-- header start================= -->
+  <div class="">
+
+    <div class="bg-[#01159f] 2xl:h-screen lg:py-28 lg:h-auto flex justify-center">
+    
+    <div class="max-w-[1500px] ">
+    <section class=" relative grid lg:grid-cols-2 gap-3 lg:px-20 px-5 py-5 text-base-100">
+     
+     <div class="flex items-top my-5 lg:px-10">
+     <div>
+       <h1 class="text-6xl text-center mb-10 font-bold" data-aos="fade-right"  data-aos-duration="1100">Nos offres</h1>
+       <div class="font-light my-5 text-justify z-50" data-aos="fade-right" data-aos-duration="1600">
+       <p >
+         Nos offres sont toutes personnalisées et adaptées à vos projets.
+         Avec Kibyon, obtenez le conseil dont vous avez besoin pour tous
+         vos projets.
+        </p>
+        <p class="my-5">
+         Vous découvrirez ci-dessous nos offres de base que
+         nous réalisons sur mesure. Nos experts sont à même de répondre à
+         de nombreuses demandes : du diagnostic d’entreprise à
+         l’accompagnement pour une stratégie de croissance externe en
+         passant par du coaching et bien d’autres.
+         </p>
+         <p class="my-5">
+         N’hésitez pas à nous contacter pour voir de quelle façon nous pouvons vous aider
+       </p>
+       </div>
+       <div class="lg:flex items-center justify-center mt-20 hidden" data-aos-anchor-placement="top-bottom" data-aos="fade-right" data-aos-duration="2500">
+         <Link to="/contact">
+           <button  class="border px-3 py-2 rounded-lg hover:bg-primary hover:scale-105 duration-150">
+             Contactez-nous
+           </button>
+         </Link>
+       </div>
+     </div>
+   </div>
+
+
+<!-- {/* =====================cards================================= */} -->
+
+  <div class="flex justify-end lg:px-10">
+  <div class="grid lg:grid-rows-2  grid-rows-4 grid-flow-col gap-8 justify-center pt-5 lg:pt-2">
+     <!-- {/* ================card1======================== */} -->
+    <a href="#market_study">
+    <div class="relative cardBody" data-aos="flip-up" data-aos-anchor-placement="top-bottom">
+       <h2 class="absolute top-3 left-10 z-10 cardText">
+         Étude de marché
+       </h2>
+       <div class="flip-card ">
+         <div class="flip-card-inner">
+           <div class="flip-card-front">
+             <img
+               src="./img/Introduction/1st Cards option 4- Market research.png"
+               alt="Avatar"
+               class="w-[220px] h-[220px] rounded-t-lg"
+             />
+           </div>
+           <div class="flip-card-back rounded-t-lg bg-primary">
+             <p class="text-xs mt-10 p-3 text-justify">
+               Les institutions financières vous font payer le risque ?
+               Nous, nous le réduisons. Faites une étude de marché et
+               réduisez le risque inhérent à vos projets avec Kibyon.
+             </p>
+           </div>
+         </div>
+       </div>
+       <div class="bg-primary w-full h-9 relative rounded-b-lg">
+         <p class="absolute left-11 top-1 cardText">
+           A partir de 499€
+         </p>
+       </div>
+     </div>
+    </a>
+
+     <!-- {/* ====================card3=========== */} -->
+     <a href="#Business_plan">
+     <div class="relative cardBody" data-aos="flip-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
+       <h2 class="absolute top-3 left-14 z-10 cardText">
+         Business plan
+       </h2>
+       <div class="flip-card ">
+         <div class="flip-card-inner">
+           <div class="flip-card-front">
+             <img
+               src='./img/Introduction/3rd Cards - Business plan option 2.png'
+               alt="Avatar"
+               class="w-[220px] h-[220px] rounded-t-lg"
+             />
+           </div>
+           <div class="flip-card-back rounded-t-lg bg-primary">
+             <p class="text-xs mt-10 p-3 text-justify">
+               Et si nous faisions un tour d’horizon à 360° de votre projet
+               ? Nous réaliserons un business plan sur mesure incluant
+               étude de marché et prévisionnel financier, en vous
+               accompagnant sur les différentes stratégies possibles.
+             </p>
+           </div>
+         </div>
+       </div>
+       <div class="bg-primary w-full h-9 relative rounded-b-lg">
+         <p class="absolute left-11 top-1 cardText">
+           A partir de 999€
+         </p>
+       </div>
+     </div>
+     </a>
+
+     <!-- {/* ==========================card2============ */} -->
+    <a href="#financial_forecast">
+    <div class="relative cardBody" data-aos="flip-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1400">
+       <h2 class="absolute top-3 left-7 z-10 cardText">
+         Prévisionel financier
+       </h2>
+       <div class="flip-card ">
+         <div class="flip-card-inner">
+           <div class="flip-card-front">
+             <img
+               src="./img/Introduction/Cards N°2= Prévi.png"
+               alt="Avatar"
+               class="w-[220px] h-[220px] rounded-t-lg"
+             />
+           </div>
+           <div class="flip-card-back rounded-t-lg bg-primary">
+             <p class="text-xs mt-6 p-3 text-justify">
+               Réaliser un prévisionnel financier vous parait impossible ?
+               superflu ? ou une simple requête sans intérêt de différents
+               tiers ? faites-nous confiance, dans le feu de l’action vous
+               apprécierez avoir un guide sur lequel vous appuyer .Alors
+               préparons votre feuille de route ensemble !
+             </p>
+           </div>
+         </div>
+       </div>
+       <div class="bg-primary w-full h-9 relative rounded-b-lg">
+         <p class="absolute left-11 top-1 cardText">
+           A partir de 599€
+         </p>
+       </div>
+     </div>
+    </a>
+     <!-- {/* ===================card4================== */} -->
+     <a href="#Unique_offer">
+     <div class="relative cardBody" data-aos="flip-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1600">
+       <h2 class="absolute top-3 left-14 z-10 cardText">
+         Offre unique
+       </h2>
+       <div class="flip-card ">
+         <div class="flip-card-inner">
+           <div class="flip-card-front">
+             <img
+               src="./img/Introduction/1st Cards option 2- Market research.png"
+               alt="Avatar"
+               class="w-[220px] h-[220px] rounded-t-lg"
+             />
+           </div>
+           <div class="flip-card-back rounded-t-lg bg-primary">
+             <p class="text-xs mt-6 p-3 text-justify">
+               Vous avez besoin d’aide ou souhaitez nous soumettre un
+               projet ? nous pouvons intervenir sur la stratégie et
+               l’organisation d’une entreprise de l’idée à la cession,
+               réaliser du coaching, résoudre des problèmes précis, épauler
+               ponctuellement le dirigeant en fonction de ses besoins etc.
+             </p>
+           </div>
+         </div>
+       </div>
+       <div class="bg-primary w-full h-9 relative rounded-b-lg">
+         <p class="absolute left-12 top-1 cardText">Sur demande</p>
+       </div>
+     </div>
+     </a>
+   </div>
+  </div>
+   <div class="flex items-center justify-center mt-10 lg:hidden ">
+         <Link to="/contact">
+           <button class="border px-3 py-2 rounded-lg hover:bg-primary hover:scale-105 duration-150">
+             Contactez-nous
+           </button>
+         </Link>
+       </div>
+ </section>
+    </div>
+
+      
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  <!-- header end =========================== -->
+
+
+  <!-- slider start========== -->
+  <div class="">
+<div class="lg:px-5 flex flex-col justify-center lg:py-20 bg-primary text-center text-white py-10">
+      <h1 class="text-4xl font-bold  lg:my-5">Notre méthode</h1>
+     
+     <div
+       
+     class="swiper"
+      >
+      <div class="swiper-wrapper">
+
+        
+        <div class="swiper-slide">
+          <div class="rounded-lg  bg-gradient-to-t from-[#080E1A]  to-[#1A3D5F]  ">
+            <h3 class="text-lg font-bold pt-3">Étape 1 </h3>
+            <img src='./img/Offre unique/image 1.png' alt="" class="!w-[300px] !h-[300px]" />
+            <p class="text-xs font-bold bg-[#080E1A] text-justify  rounded-b-lg p-3">
+              1 échange téléphonique pour bien comprendre votre projet
+            </p>
+          </div>
+        </div>
+
+
+
+
+        <div class="swiper-slide">
+          <div class="rounded-lg bg-gradient-to-t from-[#9F3936] to-[#E3A272]">
+            <h3 class="text-lg font-bold pt-3">Étape 2 </h3>
+            <div class="h-[280px] overflow-hidden">
+              <img src='./img/Offre unique/image 2.png' alt="" class="" />
+            </div>
+            <p class="text-xs font-bold bg-[#b05345] text-justify  rounded-b-lg p-3">
+              Collecte des éléments disponibles du projet et collaboration pour
+              obtenir les éléments manquants
+            </p>
+          </div>
+        </div>
+
+
+
+
+        <div class="swiper-slide">
+          <div class="rounded-lg bg-gradient-to-t from-[#A49580] to-[#EBECEC]">
+            <h3 class="text-lg font-bold pt-3">Étape 3 </h3>
+            <img src='./img/Offre unique/image 3.png' alt="" class="" />
+            <p class="text-xs font-bold bg-[#A49580] text-justify  rounded-b-lg p-3">
+              1 proposition commerciale adaptée à votre besoin
+            </p>
+          </div>
+        </div>
+
+
+
+
+        <div class="swiper-slide">
+          <div class="rounded-lg bg-gradient-to-t from-[#434551] to-[#E9D0BF]">
+            <h3 class="text-lg font-bold pt-3">Étape 4 </h3>
+            <img src='./img/Offre unique/image 4.png' alt="" class="" />
+            <p class="text-xs font-bold bg-[#161A26] text-justify  rounded-b-lg p-3">
+              Entretiens de travail de plusieurs heures pour structurer le
+              projet et définir les lignes directrices
+            </p>
+          </div>
+        </div>
+
+
+
+        <div class="swiper-slide">
+          <div class="rounded-lg bg-gradient-to-t to-[#076167] from-[#000000] to-90%">
+            <h3 class="text-lg font-bold pt-3">Étape 5 </h3>
+            <img src='./img/Offre unique/image 5.png' alt="" class="" />
+            <p class="text-xs font-bold bg-[#01191a] text-justify  rounded-b-lg p-3">
+              Plusieurs échanges complémentaires au fil de la mission pour
+              préciser le projet et réfléchir ensemble aux meilleurs choix pour
+              vous
+            </p>
+          </div>
+        </div>
+
+
+
+        <div class="swiper-slide">
+          <div class="rounded-lg bg-gradient-to-t from-[#678CA7] to-[#B4CEDB] to-90%">
+            <h3 class="text-lg font-bold pt-3">Étape 6 </h3>
+            <img src='./img/Offre unique/image 6.png' alt="" class="" />
+            <p class="text-xs font-bold bg-[#678CA7] text-justify  rounded-b-lg p-3">
+              Livrable du projet en pdf et Powerpoint avec accès au fichier
+              source (pour la partie financière notamment)
+            </p>
+          </div>
+        </div>
+
+
+        <div class="swiper-slide">
+          <div class="rounded-lg bg-gradient-to-t from-[#27445A] to-[#4D9FA9]">
+            <h3 class="text-lg font-bold pt-3">Étape 7</h3>
+            <div class="h-[280px] overflow-hidden">
+              <img src="img/Offre unique/image 7 (2).png" alt="" class="" />
+            </div>
+            <p class="text-xs font-bold bg-[#27445A] text-justify  rounded-b-lg p-3">
+              Présentation du projet et collaboration avec vous pour assurer une
+              prise en main complète, favorisant ainsi votre totale indépendance
+              et autonomie
+            </p>
+          </div>
+        </div>
+      </div>
+
+        <!-- {/* ================
+        Navigation buttons
+        ============================ */} -->
+        <div class="flex my-5 text-3xl justify-center gap-3">
+          <div  class="swiper-button-prev">
+            <BsArrowLeftShort />
+          </div>
+          <div  class="swiper-button-next">
+            <BsArrowRightShort />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    
+
+      <div class="flex justify-center py-10">
+        <p class="text-justify w-[80%] text-white ">
+          Voici un aperçu de notre processus de missions. Cependant, afin de
+          vous proposer une offre sur mesure, nous adaptons nos méthodes à votre
+          projet, à votre façon de travailler et aux aléas éventuels. que nous
+          pourrions rencontrer.
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <!-- slider end========== -->
+
+
 
   <div id="page">
     <div class="flex justify-center h-screen">
@@ -221,7 +725,31 @@
     </div>
   </div>
   <div id="page4"></div>
-  <div class="tt"></div>
+  <div class="tt">
+    <div>
+      <div id="Unique_offer" class="relative overflow-hidden">
+        <div class="card p-8 absolute lg:bottom-32 bottom-10 mx-5 lg:left-52 lg:w-[70%] border border-secondary z-10">
+          <h2 class="lg:text-5xl font-bold my-10 text-secondary">
+            Qu’est-ce que l’offre unique ?
+          </h2>
+          <p class=" lg:block lg:text-base text-base-100  text-xs text-justify">
+            Exprimez-nous vos difficultés, vos besoins et nous trouverons la
+            meilleure façon de vous aider. A travers cette offre nous voulons
+            apporter de la flexibilité et ainsi être au plus près de vos
+            préoccupations et des problématiques que vous rencontrez. Pour
+            autant, si cela sort de notre champ de compétence nous vous en
+            ferons part et tenterons de vous orienter vers les experts les plus
+            adaptés.
+          </p>
+        </div>
+
+        <div >
+          <img src='./img/Offre unique/Offre unique without background.png' alt="" class="w-full absolute" />
+          <img src="img/Offre unique/Offre unique without object.jpg" alt="" class="w-full" />
+        </div>
+      </div>
+    </div>
+  </div>
  <!-- footer====================================== -->
 <footer>
 
@@ -380,11 +908,62 @@
 
 
 <!-- =================================== -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script>
 
+
+const swiper = new Swiper('.swiper', {
+
+
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 10,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+
+      breakpoints:{
+          390: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3, 
+            spaceBetween: 170,
+          },
+         
+        }
+   
+       
+       
+
+})
+    
+  </script>
   <script>
 
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+
+  .section3 {
+    width: 100vw;
+
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section3 p {
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .cursor {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: normal;
+  }
+
+  .section3:hover .cursor {
+    mix-blend-mode: difference;
+  }
+</style>
+</head>
+<body>
+  <div class="section3" id="sec3">
+    <p>This is a custom section.</p>
+    <div class="cursor"></div>
+  </div>
+
+  <div>
+    fddddddg
+  </div>
+
+  <script>
+    const sec3 = document.getElementById("sec3");
+    const cursor = sec3.querySelector(".cursor");
+
+    sec3.addEventListener("mouseenter", () => {
+      cursor.style.mixBlendMode = "difference";
+    });
+
+    sec3.addEventListener("mouseleave", () => {
+      cursor.style.mixBlendMode = "normal";
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      let x = e.pageX;
+      let y = e.pageY;
+      cursor.style.left = (x - 22) + "px";
+      cursor.style.top = (y - 22) + "px";
+  });
+
+  
+  </script>
+</body>
+</html>
