@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kibyon</title>
-  <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kibyon</title>
+    <link rel="stylesheet" href="style.css" />
 
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
     />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 
     <!-- font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,15 +19,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
-
+    <!-- font awesome icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!-- swiper js-------- -->
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-/>
-
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 
     <!-- tailwind css  -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,241 +55,224 @@
         },
       };
     </script>
-  <style>
+    <style>
+      /* header start  */
+      .flip-card {
+        background-color: transparent;
+        min-width: 220px;
+        height: 220px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .cardBody:hover .cardText {
+        transition-duration: 0.7s;
+        transform: scale(1.1);
+        color: #0332c8;
+        font-weight: 700;
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .flip-card-back {
+        color: white;
+        transform: rotateY(180deg);
+      }
+
+      #myVideo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+      }
+
+      .content {
+        position: relative;
+        bottom: 0;
+        top: 1%;
+        color: #f1f1f1;
+        width: 100%;
+      }
+      /* header end */
+
+      .section {
+        height: 200vh; /* Increased for demonstration */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      .fade-text {
+        opacity: 0;
+      }
+
+      .tty {
+        height: 100vh;
+        width: 100vw;
+        background-color: red;
+      }
+
+      /* swiper start  */
+
+      .swiper {
+        max-width: 1200px !important;
+        padding-top: 20px;
+        padding-bottom: 70px;
+        margin-right: 0 !important;
+margin-left: 0 !important;
+position: relative;
+      }
+
+      .swiper-slide {
+        background-position: center !important;
+        background-size: cover;
+        width: 300px;
+        height: 350px !important;
+        opacity: 0.7;
+        filter: blur(8px);
+        margin-right: 155px !important;
+      }
+      .swiper-slide-active {
+        opacity: 1;
+        filter: blur(0px);
+        padding: 10px !important;
+        width: 330px !important;
+        height: 350px !important;
+      }
+      .prev {
+        position: absolute;
+        left: 3px;
+        top: 50%;
+        z-index: 10;
+        transition: 0.5s;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .prev:hover {
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        color: black;
+        padding: 2px;
+        border-radius: 50%;
+        transform: scale(1.2);
+      }
+
+      .next {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 3px;
+        top: 50%;
+        transition: 0.5s;
+        z-index: 10;
+        border-radius: 50%;
+      }
+      .next:hover {
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        color: black;
+        padding: 2px;
+        border-radius: 50%;
+        transform: scale(1.2);
+      }
+
+      .swiper-pagination {
+        justify-content: center;
+        display: flex;
+        position: relative;
    
-/* header start  */
-.flip-card {
-    background-color: transparent;
-    min-width: 220px;
-    height: 220px;
-    perspective: 1000px;
-    
-  }
-  
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-    
-  }
-  .cardBody:hover .cardText {
-    transition-duration: 0.7s ;
-    transform: scale(1.1);
-    color: #0332c8;
-    font-weight: 700;
-  }
+        top: 70px !important;
+      }
+      .swiper-pagination-bullet {
+        background-color: aliceblue !important;
+      }
 
- 
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  
-  .flip-card-back {
-    
-    color: white;
-    transform: rotateY(180deg);
-  }
+      @media only screen and (max-width: 600px) {
+        .swiper-slide {
+          margin-right: 22px !important;
+        }
+      }
+      /* swiper end */
 
-  #myVideo {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-  }
-  
-  .content {
-    position: relative;
-    bottom: 0;
-    top: 1%;
-    color: #f1f1f1;
-    width: 100%;
-    
-  }
-/* header end */
+      /* =========section-4============== */
+      .card {
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.4px);
+        -webkit-backdrop-filter: blur(6.4px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar start=================== -->
+    <nav class="page-wrapper">
+      <div class="nav-wrapper">
+        <div class="grad-bar"></div>
+        <nav class="navbar lg:px-20">
+          <a href="/" class="text-2xl text-[#2c71f6] px-5 cursor-pointer"
+            >Kibyon</a
+          >
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="nav no-search">
+            <li class="nav-item"><a href="index.html">Accueil</a></li>
+            <li class="nav-item"><a href="offer.html">Nos offres</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
+            <li class="nav-item">
+              <a href="about.html">A propos de Kibyon</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </nav>
+    <script>
+      $("#search-icon").click(function () {
+        $(".nav").toggleClass("search");
+        $(".nav").toggleClass("no-search");
+        $(".search-input").toggleClass("search-active");
+      });
 
+      $(".menu-toggle").click(function () {
+        $(".nav").toggleClass("mobile-nav");
+        $(this).toggleClass("is-active");
+      });
+    </script>
+    <!-- navbar end==============================  -->
 
-
-    .section {
-      height: 200vh; /* Increased for demonstration */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .content {
-      text-align: center;
-    }
-
-    .fade-text {
-      opacity: 0;
-    }
-
-    .tty {
-      height: 100vh;
-      width: 100vw;
-      background-color: red;
-    }
-
-
-    /* swiper start  */
-
-    
-.swiper {
-    max-width: 1200px !important;
-    padding-top: 20px;
-    padding-bottom: 70px;
-  }
-  
-  .swiper-slide {
-    background-position: center !important;
-    background-size: cover;
-    width: 300px;
-    height: 350px !important;
-    opacity: 0.7;
-    filter: blur(8px);
-    margin-right: 155px !important;
-  }
-  .swiper-slide-active{
-    opacity: 1;
-    filter: blur(0px);
-    padding: 10px !important;
-    width: 330px !important;
-    height: 350px !important;
-  }
-  .prev{
-    position: absolute;
-    left: 3px;
-    top: 50%;
-    z-index: 10;
-    transition: 0.5s;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .prev:hover{
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    color: black;
-    padding: 2px;
-    border-radius: 50%;
-    transform:scale(1.2)
-  }
-  
-  .next{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 3px;
-    top: 50%;
-    transition: 0.5s;
-    z-index: 10;
-    border-radius: 50%;
-  }
-  .next:hover{
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    color: black;
-    padding: 2px;
-    border-radius: 50%;
-    transform:scale(1.2)
-  }
-  
-  .swiper-pagination{
-    justify-content: center;
-    display: flex;
-    
-    position: relative;
-    top: 70px !important;
-  }
-  .swiper-pagination-bullet{
-    background-color: aliceblue !important;
-  }
-
-
-  @media only screen and (max-width: 600px) {
-    .swiper-slide {
-      
-      margin-right: 22px !important;
-    }
-  }
-    /* swiper end */
-
- /* =========section-4============== */
- .card {
-
-background: rgba(255, 255, 255, 0.04);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(6.4px);
--webkit-backdrop-filter: blur(6.4px);
-
-}
-
-
-
-
- 
-  </style>
-</head>
-<body>
-
-   <!-- navbar start=================== -->
-   <nav class="page-wrapper">
-    <div class="nav-wrapper">
-      <div class="grad-bar"></div>
-      <nav class="navbar lg:px-20">
-        <p class="text-2xl text-[#2c71f6] px-5">Kibyon</p>
-        <div class="menu-toggle" id="mobile-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <ul class="nav no-search">
-          <li class="nav-item"><a href="index.html">Accueil</a></li>
-          <li class="nav-item"><a href="offer.html">Nos offres</a></li>
-          <li class="nav-item"><a href="contact.html">Contact</a></li>
-          <li class="nav-item">
-            <a href="about.html">A propos de Kibyon</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </nav>
-  <script>
-    $("#search-icon").click(function () {
-      $(".nav").toggleClass("search");
-      $(".nav").toggleClass("no-search");
-      $(".search-input").toggleClass("search-active");
-    });
-
-    $(".menu-toggle").click(function () {
-      $(".nav").toggleClass("mobile-nav");
-      $(this).toggleClass("is-active");
-    });
-  </script>
-  <!-- navbar end==============================  -->
-
-
-<!-- 
+    <!-- 
 <main class="overflow-hidden">
   <div class="tty">erte</div>
   <div class="section">
@@ -305,859 +286,888 @@ backdrop-filter: blur(6.4px);
   <div class="tty">erte</div>
 </main> -->
 
+    <!-- =================================== -->
+    <div id="main">
+      <!-- header start================= -->
+      <div class="">
+        <div
+          class="bg-[#01159f] 2xl:h-screen lg:py-28 py-20 lg:h-auto flex justify-center"
+        >
+          <div class="max-w-[1500px]">
+            <section
+              class="relative grid lg:grid-cols-2 gap-3 lg:px-20 px-5 py-5 text-base-100"
+            >
+              <div class="flex items-top my-5 lg:px-10">
+                <div>
+                  <h1
+                    class="text-6xl text-center mb-10 font-bold"
+                    data-aos="fade-right"
+                    data-aos-duration="1100"
+                  >
+                    Nos offres
+                  </h1>
+                  <div
+                    class="font-light my-5 text-justify z-50"
+                    data-aos="fade-right"
+                    data-aos-duration="1600"
+                  >
+                    <p>
+                      Nos offres sont toutes personnalisées et adaptées à vos
+                      projets. Avec Kibyon, obtenez le conseil dont vous avez
+                      besoin pour tous vos projets.
+                    </p>
+                    <p class="my-5">
+                      Vous découvrirez ci-dessous nos offres de base que nous
+                      réalisons sur mesure. Nos experts sont à même de répondre
+                      à de nombreuses demandes : du diagnostic d’entreprise à
+                      l’accompagnement pour une stratégie de croissance externe
+                      en passant par du coaching et bien d’autres.
+                    </p>
+                    <p class="my-5">
+                      N’hésitez pas à nous contacter pour voir de quelle façon
+                      nous pouvons vous aider
+                    </p>
+                  </div>
+                  <div class="lg:flex items-center justify-center mt-20 hidden">
+                    <a href="contact.html">
+                      <button
+                        class="border px-3 py-2 rounded-lg hover:bg-primary hover:scale-105 duration-150"
+                      >
+                        Contactez-nous
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
+              <!-- {/* =====================cards================================= */} -->
 
+              <div class="flex lg:justify-end justify-center lg:px-10">
+                <div
+                  class="grid lg:grid-rows-2 grid-rows-4 grid-flow-col gap-8 justify-center pt-5 lg:pt-2"
+                >
+                  <!-- {/* ================card1======================== */} -->
+                  <a href="#market_study">
+                    <div
+                      class="relative cardBody"
+                      data-aos="flip-up"
+                      data-aos-anchor-placement="top-bottom"
+                    >
+                      <h2 class="absolute top-3 left-10 z-10 cardText">
+                        Étude de marché
+                      </h2>
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img
+                              src="./img/Introduction/1st Cards option 4- Market research.png"
+                              alt="Avatar"
+                              class="w-[220px] h-[220px] rounded-t-lg"
+                            />
+                          </div>
+                          <div class="flip-card-back rounded-t-lg bg-primary">
+                            <p class="text-xs mt-10 p-3 text-justify">
+                              Les institutions financières vous font payer le
+                              risque ? Nous, nous le réduisons. Faites une étude
+                              de marché et réduisez le risque inhérent à vos
+                              projets avec Kibyon.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-primary w-full h-9 relative rounded-b-lg">
+                        <p class="absolute left-11 top-1 cardText">
+                          A partir de 499€
+                        </p>
+                      </div>
+                    </div>
+                  </a>
 
+                  <!-- {/* ====================card3=========== */} -->
+                  <a href="#Business_plan">
+                    <div
+                      class="relative cardBody"
+                      data-aos="flip-up"
+                      data-aos-anchor-placement="top-bottom"
+                      data-aos-duration="1200"
+                    >
+                      <h2 class="absolute top-3 left-14 z-10 cardText">
+                        Business plan
+                      </h2>
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img
+                              src="./img/Introduction/3rd Cards - Business plan option 2.png"
+                              alt="Avatar"
+                              class="w-[220px] h-[220px] rounded-t-lg"
+                            />
+                          </div>
+                          <div class="flip-card-back rounded-t-lg bg-primary">
+                            <p class="text-xs mt-10 p-3 text-justify">
+                              Et si nous faisions un tour d’horizon à 360° de
+                              votre projet ? Nous réaliserons un business plan
+                              sur mesure incluant étude de marché et
+                              prévisionnel financier, en vous accompagnant sur
+                              les différentes stratégies possibles.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-primary w-full h-9 relative rounded-b-lg">
+                        <p class="absolute left-11 top-1 cardText">
+                          A partir de 999€
+                        </p>
+                      </div>
+                    </div>
+                  </a>
 
-
-
-
-
-<!-- =================================== -->
-<div id="main">
-
-  <!-- header start================= -->
-  <div class="">
-
-    <div class="bg-[#01159f] 2xl:h-screen lg:py-28 py-20 lg:h-auto flex justify-center">
-    
-    <div class="max-w-[1500px] ">
-    <section class=" relative grid lg:grid-cols-2 gap-3 lg:px-20 px-5 py-5 text-base-100">
-     
-     <div class="flex items-top  my-5 lg:px-10">
-     <div>
-       <h1 class="text-6xl text-center mb-10 font-bold" data-aos="fade-right"  data-aos-duration="1100">Nos offres</h1>
-       <div class="font-light my-5 text-justify z-50" data-aos="fade-right" data-aos-duration="1600">
-       <p >
-         Nos offres sont toutes personnalisées et adaptées à vos projets.
-         Avec Kibyon, obtenez le conseil dont vous avez besoin pour tous
-         vos projets.
-        </p>
-        <p class="my-5">
-         Vous découvrirez ci-dessous nos offres de base que
-         nous réalisons sur mesure. Nos experts sont à même de répondre à
-         de nombreuses demandes : du diagnostic d’entreprise à
-         l’accompagnement pour une stratégie de croissance externe en
-         passant par du coaching et bien d’autres.
-         </p>
-         <p class="my-5">
-         N’hésitez pas à nous contacter pour voir de quelle façon nous pouvons vous aider
-       </p>
-       </div>
-       <div class="lg:flex items-center justify-center mt-20 hidden" data-aos-anchor-placement="top-bottom" data-aos="fade-right" data-aos-duration="2500">
-         <Link to="/contact">
-           <button  class="border px-3 py-2 rounded-lg hover:bg-primary hover:scale-105 duration-150">
-             Contactez-nous
-           </button>
-         </Link>
-       </div>
-     </div>
-   </div>
-
-
-<!-- {/* =====================cards================================= */} -->
-
-  <div class="flex lg:justify-end justify-center lg:px-10">
-  <div class="grid lg:grid-rows-2  grid-rows-4 grid-flow-col gap-8 justify-center pt-5 lg:pt-2">
-     <!-- {/* ================card1======================== */} -->
-    <a href="#market_study">
-    <div class="relative cardBody" data-aos="flip-up" data-aos-anchor-placement="top-bottom">
-       <h2 class="absolute top-3 left-10 z-10 cardText">
-         Étude de marché
-       </h2>
-       <div class="flip-card ">
-         <div class="flip-card-inner">
-           <div class="flip-card-front">
-             <img
-               src="./img/Introduction/1st Cards option 4- Market research.png"
-               alt="Avatar"
-               class="w-[220px] h-[220px] rounded-t-lg"
-             />
-           </div>
-           <div class="flip-card-back rounded-t-lg bg-primary">
-             <p class="text-xs mt-10 p-3 text-justify">
-               Les institutions financières vous font payer le risque ?
-               Nous, nous le réduisons. Faites une étude de marché et
-               réduisez le risque inhérent à vos projets avec Kibyon.
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="bg-primary w-full h-9 relative rounded-b-lg">
-         <p class="absolute left-11 top-1 cardText">
-           A partir de 499€
-         </p>
-       </div>
-     </div>
-    </a>
-
-     <!-- {/* ====================card3=========== */} -->
-     <a href="#Business_plan">
-     <div class="relative cardBody" data-aos="flip-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
-       <h2 class="absolute top-3 left-14 z-10 cardText">
-         Business plan
-       </h2>
-       <div class="flip-card ">
-         <div class="flip-card-inner">
-           <div class="flip-card-front">
-             <img
-               src='./img/Introduction/3rd Cards - Business plan option 2.png'
-               alt="Avatar"
-               class="w-[220px] h-[220px] rounded-t-lg"
-             />
-           </div>
-           <div class="flip-card-back rounded-t-lg bg-primary">
-             <p class="text-xs mt-10 p-3 text-justify">
-               Et si nous faisions un tour d’horizon à 360° de votre projet
-               ? Nous réaliserons un business plan sur mesure incluant
-               étude de marché et prévisionnel financier, en vous
-               accompagnant sur les différentes stratégies possibles.
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="bg-primary w-full h-9 relative rounded-b-lg">
-         <p class="absolute left-11 top-1 cardText">
-           A partir de 999€
-         </p>
-       </div>
-     </div>
-     </a>
-
-     <!-- {/* ==========================card2============ */} -->
-    <a href="#financial_forecast">
-    <div class="relative cardBody" data-aos="flip-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1400">
-       <h2 class="absolute top-3 left-7 z-10 cardText">
-         Prévisionel financier
-       </h2>
-       <div class="flip-card ">
-         <div class="flip-card-inner">
-           <div class="flip-card-front">
-             <img
-               src="./img/Introduction/Cards N°2= Prévi.png"
-               alt="Avatar"
-               class="w-[220px] h-[220px] rounded-t-lg"
-             />
-           </div>
-           <div class="flip-card-back rounded-t-lg bg-primary">
-             <p class="text-xs mt-6 p-3 text-justify">
-               Réaliser un prévisionnel financier vous parait impossible ?
-               superflu ? ou une simple requête sans intérêt de différents
-               tiers ? faites-nous confiance, dans le feu de l’action vous
-               apprécierez avoir un guide sur lequel vous appuyer .Alors
-               préparons votre feuille de route ensemble !
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="bg-primary w-full h-9 relative rounded-b-lg">
-         <p class="absolute left-11 top-1 cardText">
-           A partir de 599€
-         </p>
-       </div>
-     </div>
-    </a>
-     <!-- {/* ===================card4================== */} -->
-     <a href="#Unique_offer">
-     <div class="relative cardBody" data-aos="flip-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1600">
-       <h2 class="absolute top-3 left-14 z-10 cardText">
-         Offre unique
-       </h2>
-       <div class="flip-card ">
-         <div class="flip-card-inner">
-           <div class="flip-card-front">
-             <img
-               src="./img/Introduction/1st Cards option 2- Market research.png"
-               alt="Avatar"
-               class="w-[220px] h-[220px] rounded-t-lg"
-             />
-           </div>
-           <div class="flip-card-back rounded-t-lg bg-primary">
-             <p class="text-xs mt-6 p-3 text-justify">
-               Vous avez besoin d’aide ou souhaitez nous soumettre un
-               projet ? nous pouvons intervenir sur la stratégie et
-               l’organisation d’une entreprise de l’idée à la cession,
-               réaliser du coaching, résoudre des problèmes précis, épauler
-               ponctuellement le dirigeant en fonction de ses besoins etc.
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="bg-primary w-full h-9 relative rounded-b-lg">
-         <p class="absolute left-12 top-1 cardText">Sur demande</p>
-       </div>
-     </div>
-     </a>
-   </div>
-  </div>
-   <div class="flex items-center justify-center mt-10 lg:hidden ">
-         <Link to="/contact">
-           <button class="border px-3 py-2 rounded-lg hover:bg-primary hover:scale-105 duration-150">
-             Contactez-nous
-           </button>
-         </Link>
-       </div>
- </section>
-    </div>
-
-      
-    </div>
-
-
-
-
-
-
-
-  </div>
-
-  <!-- header end =========================== -->
-
-
-  <!-- slider start========== -->
-  <div class="">
-<div class="lg:px-5 flex flex-col justify-center lg:py-20 bg-primary text-center text-white py-10">
-      <h1 class="text-4xl font-bold  lg:my-5">Notre méthode</h1>
-     
-     <div
-       
-     class="swiper"
-      >
-      <div class="swiper-wrapper">
-
-        
-        <div class="swiper-slide">
-          <div class="rounded-lg  bg-gradient-to-t from-[#080E1A]  to-[#1A3D5F]  ">
-            <h3 class="text-lg font-bold pt-3">Étape 1 </h3>
-            <img src='./img/Offre unique/Image 1.png' alt="" class="!w-[300px] !h-[300px]" />
-            <p class="text-xs font-bold bg-[#080E1A] text-justify  rounded-b-lg p-3">
-              1 échange téléphonique pour bien comprendre votre projet
-            </p>
-          </div>
-        </div>
-
-
-
-
-        <div class="swiper-slide">
-          <div class="rounded-lg bg-gradient-to-t from-[#9F3936] to-[#E3A272]">
-            <h3 class="text-lg font-bold pt-3">Étape 2 </h3>
-            <div class="h-[280px] overflow-hidden">
-              <img src='./img/Offre unique/Image 2.png' alt="" class="" />
-            </div>
-            <p class="text-xs font-bold bg-[#b05345] text-justify  rounded-b-lg p-3">
-              Collecte des éléments disponibles du projet et collaboration pour
-              obtenir les éléments manquants
-            </p>
-          </div>
-        </div>
-
-
-
-
-        <div class="swiper-slide">
-          <div class="rounded-lg bg-gradient-to-t from-[#A49580] to-[#EBECEC]">
-            <h3 class="text-lg font-bold pt-3">Étape 3 </h3>
-            <img src='./img/Offre unique/image 3.png' alt="" class="" />
-            <p class="text-xs font-bold bg-[#A49580] text-justify  rounded-b-lg p-3">
-              1 proposition commerciale adaptée à votre besoin
-            </p>
-          </div>
-        </div>
-
-
-
-
-        <div class="swiper-slide">
-          <div class="rounded-lg bg-gradient-to-t from-[#434551] to-[#E9D0BF]">
-            <h3 class="text-lg font-bold pt-3">Étape 4 </h3>
-            <img src='./img/Offre unique/image 4.png' alt="" class="" />
-            <p class="text-xs font-bold bg-[#161A26] text-justify  rounded-b-lg p-3">
-              Entretiens de travail de plusieurs heures pour structurer le
-              projet et définir les lignes directrices
-            </p>
-          </div>
-        </div>
-
-
-
-        <div class="swiper-slide">
-          <div class="rounded-lg bg-gradient-to-t to-[#076167] from-[#000000] to-90%">
-            <h3 class="text-lg font-bold pt-3">Étape 5 </h3>
-            <img src='./img/Offre unique/image 5.png' alt="" class="" />
-            <p class="text-xs font-bold bg-[#01191a] text-justify  rounded-b-lg p-3">
-              Plusieurs échanges complémentaires au fil de la mission pour
-              préciser le projet et réfléchir ensemble aux meilleurs choix pour
-              vous
-            </p>
-          </div>
-        </div>
-
-
-
-        <div class="swiper-slide">
-          <div class="rounded-lg bg-gradient-to-t from-[#678CA7] to-[#B4CEDB] to-90%">
-            <h3 class="text-lg font-bold pt-3">Étape 6 </h3>
-            <img src='./img/Offre unique/image 6.png' alt="" class="" />
-            <p class="text-xs font-bold bg-[#678CA7] text-justify  rounded-b-lg p-3">
-              Livrable du projet en pdf et Powerpoint avec accès au fichier
-              source (pour la partie financière notamment)
-            </p>
-          </div>
-        </div>
-
-
-        <div class="swiper-slide">
-          <div class="rounded-lg bg-gradient-to-t from-[#27445A] to-[#4D9FA9]">
-            <h3 class="text-lg font-bold pt-3">Étape 7</h3>
-            <div class="h-[280px] overflow-hidden">
-              <img src="img/Offre unique/image 7 (2).png" alt="" class="" />
-            </div>
-            <p class="text-xs font-bold bg-[#27445A] text-justify  rounded-b-lg p-3">
-              Présentation du projet et collaboration avec vous pour assurer une
-              prise en main complète, favorisant ainsi votre totale indépendance
-              et autonomie
-            </p>
+                  <!-- {/* ==========================card2============ */} -->
+                  <a href="#financial_forecast">
+                    <div
+                      class="relative cardBody"
+                      data-aos="flip-up"
+                      data-aos-anchor-placement="top-bottom"
+                      data-aos-duration="1400"
+                    >
+                      <h2 class="absolute top-3 left-7 z-10 cardText">
+                        Prévisionel financier
+                      </h2>
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img
+                              src="./img/Introduction/Cards N°2= Prévi.png"
+                              alt="Avatar"
+                              class="w-[220px] h-[220px] rounded-t-lg"
+                            />
+                          </div>
+                          <div class="flip-card-back rounded-t-lg bg-primary">
+                            <p class="text-xs mt-6 p-3 text-justify">
+                              Réaliser un prévisionnel financier vous parait
+                              impossible ? superflu ? ou une simple requête sans
+                              intérêt de différents tiers ? faites-nous
+                              confiance, dans le feu de l’action vous
+                              apprécierez avoir un guide sur lequel vous appuyer
+                              .Alors préparons votre feuille de route ensemble !
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-primary w-full h-9 relative rounded-b-lg">
+                        <p class="absolute left-11 top-1 cardText">
+                          A partir de 599€
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- {/* ===================card4================== */} -->
+                  <a href="#Unique_offer">
+                    <div
+                      class="relative cardBody"
+                      data-aos="flip-up"
+                      data-aos-anchor-placement="top-bottom"
+                      data-aos-duration="1600"
+                    >
+                      <h2 class="absolute top-3 left-14 z-10 cardText">
+                        Offre unique
+                      </h2>
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img
+                              src="./img/Introduction/1st Cards option 2- Market research.png"
+                              alt="Avatar"
+                              class="w-[220px] h-[220px] rounded-t-lg"
+                            />
+                          </div>
+                          <div class="flip-card-back rounded-t-lg bg-primary">
+                            <p class="text-xs mt-6 p-3 text-justify">
+                              Vous avez besoin d’aide ou souhaitez nous
+                              soumettre un projet ? nous pouvons intervenir sur
+                              la stratégie et l’organisation d’une entreprise de
+                              l’idée à la cession, réaliser du coaching,
+                              résoudre des problèmes précis, épauler
+                              ponctuellement le dirigeant en fonction de ses
+                              besoins etc.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-primary w-full h-9 relative rounded-b-lg">
+                        <p class="absolute left-12 top-1 cardText">
+                          Sur demande
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-center justify-center mt-10 lg:hidden">
+                <a href="contact.html">
+                  <button
+                    class="border px-3 py-2 rounded-lg hover:bg-primary hover:scale-105 duration-150"
+                  >
+                    Contactez-nous
+                  </button>
+                </a>
+              </div>
+            </section>
           </div>
         </div>
       </div>
 
-        <!-- {/* ================
+      <!-- header end =========================== -->
+
+      <!-- slider start========== -->
+      <section class="">
+        <div
+          class="lg:px-5 flex flex-col justify-center lg:py-20 bg-primary text-center text-white py-10"
+        >
+          <h1 class="lg:text-5xl text-4xl font-bold lg:my-5">Notre méthode</h1>
+
+         <div class="flex justify-center">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="rounded-lg bg-gradient-to-t from-[#080E1A] to-[#1A3D5F]"
+                >
+                  <h3 class="text-lg font-bold pt-3">Étape 1</h3>
+                  <img
+                    src="./img/Offre unique/Image 1.png"
+                    alt=""
+                    class="!w-[300px] !h-[300px]"
+                  />
+                  <p
+                    class="text-xs font-bold bg-[#080E1A] text-justify rounded-b-lg p-3"
+                  >
+                    1 échange téléphonique pour bien comprendre votre projet
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-lg bg-gradient-to-t from-[#9F3936] to-[#E3A272]"
+                >
+                  <h3 class="text-lg font-bold pt-3">Étape 2</h3>
+                  <div class="h-[280px] overflow-hidden">
+                    <img src="./img/Offre unique/Image 2.png" alt="" class="" />
+                  </div>
+                  <p
+                    class="text-xs font-bold bg-[#b05345] text-justify rounded-b-lg p-3"
+                  >
+                    Collecte des éléments disponibles du projet et collaboration
+                    pour obtenir les éléments manquants
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-lg bg-gradient-to-t from-[#A49580] to-[#EBECEC]"
+                >
+                  <h3 class="text-lg font-bold pt-3">Étape 3</h3>
+                  <img src="./img/Offre unique/image 3.png" alt="" class="" />
+                  <p
+                    class="text-xs font-bold bg-[#A49580] text-justify rounded-b-lg p-3"
+                  >
+                    1 proposition commerciale adaptée à votre besoin
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-lg bg-gradient-to-t from-[#434551] to-[#E9D0BF]"
+                >
+                  <h3 class="text-lg font-bold pt-3">Étape 4</h3>
+                  <img src="./img/Offre unique/image 4.png" alt="" class="" />
+                  <p
+                    class="text-xs font-bold bg-[#161A26] text-justify rounded-b-lg p-3"
+                  >
+                    Entretiens de travail de plusieurs heures pour structurer le
+                    projet et définir les lignes directrices
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-lg bg-gradient-to-t to-[#076167] from-[#000000] to-90%"
+                >
+                  <h3 class="text-lg font-bold pt-3">Étape 5</h3>
+                  <img src="./img/Offre unique/image 5.png" alt="" class="" />
+                  <p
+                    class="text-xs font-bold bg-[#01191a] text-justify rounded-b-lg p-3"
+                  >
+                    Plusieurs échanges complémentaires au fil de la mission pour
+                    préciser le projet et réfléchir ensemble aux meilleurs choix
+                    pour vous
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-lg bg-gradient-to-t from-[#678CA7] to-[#B4CEDB] to-90%"
+                >
+                  <h3 class="text-lg font-bold pt-3">Étape 6</h3>
+                  <img src="./img/Offre unique/image 6.png" alt="" class="" />
+                  <p
+                    class="text-xs font-bold bg-[#678CA7] text-justify rounded-b-lg p-3"
+                  >
+                    Livrable du projet en pdf et Powerpoint avec accès au
+                    fichier source (pour la partie financière notamment)
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-lg bg-gradient-to-t from-[#27445A] to-[#4D9FA9]"
+                >
+                  <h3 class="text-lg font-bold pt-3">Étape 7</h3>
+                  <div class="h-[280px] overflow-hidden">
+                    <img
+                      src="img/Offre unique/image 7 (2).png"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                  <p
+                    class="text-xs font-bold bg-[#27445A] text-justify rounded-b-lg p-3"
+                  >
+                    Présentation du projet et collaboration avec vous pour
+                    assurer une prise en main complète, favorisant ainsi votre
+                    totale indépendance et autonomie
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- {/* ================
         Navigation buttons
         ============================ */} -->
-        <div class="flex my-5 text-3xl justify-center gap-3">
-          <div  class="swiper-button-prev">
-            <BsArrowLeftShort />
+            <div class="flex my-5 text-xl justify-center gap-3">
+              <div class="prev ml-2">
+                <i class="fa-solid fa-arrow-left"></i>
+              </div>
+              <div class="next mr-2">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        
           </div>
-          <div  class="swiper-button-next">
-            <BsArrowRightShort />
+         </div>
+
+          <div class="flex justify-center py-10">
+            <p class="text-justify w-[80%] text-white">
+              Voici un aperçu de notre processus de missions. Cependant, afin de
+              vous proposer une offre sur mesure, nous adaptons nos méthodes à
+              votre projet, à votre façon de travailler et aux aléas éventuels.
+              que nous pourrions rencontrer.
+            </p>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    
+      </section>
+      <!-- slider end========== -->
 
-      <div class="flex justify-center py-10">
-        <p class="text-justify w-[80%] text-white ">
-          Voici un aperçu de notre processus de missions. Cependant, afin de
-          vous proposer une offre sur mesure, nous adaptons nos méthodes à votre
-          projet, à votre façon de travailler et aux aléas éventuels. que nous
-          pourrions rencontrer.
-        </p>
-      </div>
-    </div>
+      <section class="text-white">
+        <div id="page" class="relative">
+          <div class="flex justify-center">
+            <div class="text-5xl font-bold absolute top-3 z-30 mt-20">
+              Pourquoi faire une étude de marché ?
+            </div>
+          </div>
+          <canvas id="canvas"></canvas>
+        </div>
 
-  </div>
-  <!-- slider end========== -->
+        <div id="page1" class="z-30 px-20">
+          <!-- frame - 72---------- -->
+          <div class="">
+            <p class="">
+              L’étude de marché va vous permettre d’éliminer ou de réduire les
+              zones d’incertitudes qui subsistent dans vos différents projets.
+              En vous apportant un regard sur les attentes de vos consommateurs
+              et une visibilité sur les acteurs déjà en place sur le marché
+              concerné.
+            </p>
+          </div>
 
+          <!-- frame - 136  -->
+          <div class="mt-52">
+            <p>
+              Cela vous permettra de cerner les opportunités de marché : est-ce
+              que je me lance sur ce marché ? si oui dans quelles conditions ?
+            </p>
 
-<section class=" text-white">
-  
-  <div id="page" class="relative">
-    
+            <p>
+              Vous serez également en mesure d’identifier les risques et chances
+              de succès. L’étude de marché va vous permettre de mieux connaitre
+              l’environnement dans lequel vous évoluez, de vous rassurer sur
+              l’orientation à prendre pour maximiser les chances de succès et de
+              rassurer également l’ensemble des parties prenantes (associés,
+              financeurs, organismes tiers…)
+            </p>
+          </div>
+        </div>
+        <div id="page2" class="z-30 px-20">
+          <!-- frame ---401 -->
+          <div class="">
+            <p>
+              Une étude de marché sera votre base de réflexion pour bâtir une
+              stratégie adaptée et définir des objectifs réalistes. Nous
+              pourrons ensuite réaliser un prévisionnel financier sur mesure et
+              un plan d’actions personnalisé.
+            </p>
+          </div>
+        </div>
+        <div id="page3" class="z-30 px-20">
+          <!-- Frame 913  -->
+          <div class="text-center">
+            <h1 class="text-3xl font-bold">
+              Et si nous prenions de la hauteur ensemble ?
+            </h1>
+          </div>
 
-    <div class="flex justify-center ">
-      <div class="text-5xl font-bold absolute top-3 z-30 mt-20">
-        Pourquoi faire une étude de marché ?
-      </div>
-      
-    </div>
-    <canvas id="canvas"></canvas>
-  </div>
+          <!-- frame --- 1066 -->
+          <div class="offer-sec-content revealUp !top-[30%] !w-[35%]">
+            <p>
+              Que ce soit un projet pour une entreprise établie ou en création,
+              l’étude de marché vous permettra de prendre du recul et de la
+              hauteur sur votre projet afin de vous permettre de vous projeter
+              et de prendre les meilleures décisions pour l’avenir.
+            </p>
+            <p>
+              Kibyon vous évitera de tomber dans des biais de confirmation et
+              vous apportera d’autres points de vue et axes de réflexions afin
+              d’ouvrir le champ des possibles.
+            </p>
+          </div>
+        </div>
 
-  <div id="page1" class="z-30 px-20">
-    <!-- frame - 72---------- -->
-    <div class="">
-      <p class="">
-        L’étude de marché va vous permettre d’éliminer ou de réduire les
-        zones d’incertitudes qui subsistent dans vos différents projets.
-        En vous apportant un regard sur les attentes de vos consommateurs
-        et une visibilité sur les acteurs déjà en place sur le marché
-        concerné.
-      </p>
-    </div>
-
-
-    <!-- frame - 136  -->
-    <div class="mt-52">
-      <p>
-        Cela vous permettra de cerner les opportunités de marché : est-ce
-        que je me lance sur ce marché ? si oui dans quelles conditions ?
-      </p>
-
-      <p>
-        Vous serez également en mesure d’identifier les risques et chances
-        de succès. L’étude de marché va vous permettre de mieux connaitre
-        l’environnement dans lequel vous évoluez, de vous rassurer sur
-        l’orientation à prendre pour maximiser les chances de succès et de
-        rassurer également l’ensemble des parties prenantes (associés,
-        financeurs, organismes tiers…)
-      </p>
-    </div>
-  </div>
-  <div id="page2" class="z-30 px-20">
-
-    <!-- frame ---401 -->
-    <div class="">
-      <p>
-        Une étude de marché sera votre base de réflexion pour bâtir une
-        stratégie adaptée et définir des objectifs réalistes. Nous
-        pourrons ensuite réaliser un prévisionnel financier sur mesure et
-        un plan d’actions personnalisé.
-      </p>
-    </div>
-   
-  </div>
-  <div id="page3" class="z-30 px-20">
-    <!-- Frame 913  -->
-    <div class="text-center">
-      <h1 class="text-3xl font-bold">
-        Et si nous prenions de la hauteur ensemble ?
-      </h1>
-    </div>
-
-
-<!-- frame --- 1066 -->
-    <div class="offer-sec-content revealUp !top-[30%] !w-[35%]">
-      <p>
-        Que ce soit un projet pour une entreprise établie ou en création,
-        l’étude de marché vous permettra de prendre du recul et de la
-        hauteur sur votre projet afin de vous permettre de vous projeter
-        et de prendre les meilleures décisions pour l’avenir.
-      </p>
-      <p>
-        Kibyon vous évitera de tomber dans des biais de confirmation et
-        vous apportera d’autres points de vue et axes de réflexions afin
-        d’ouvrir le champ des possibles.
-      </p>
-    </div>
-  </div>
-
-  <!-- ---================
+        <!-- ---================
     video -2
      ======================== -->
-  <div id="page4" class="z-30 px-20">
-    <!-- frame - 00 ----------------  -->
-    <div class=" mt-20">
-      <h1 class="font-bold text-5xl">
-        Qu’est-ce qu’un prévisionnel financier ?
-      </h1>
-      
-    </div>
-    <div class="mb-20">
-            
-      <p class="w-[40%] ">
-        Il est d’usage de dire que le prévisionnel financier est la
-        partie financière du business plan. C’est la modélisation
-        chiffrée de votre stratégie à 3-5ans. En simplifiant, le
-        prévisionnel financier, sera votre boussole qui révèlera les
-        impacts financiers à court, moyen et long terme des actions que
-        vous entreprendrez pour bâtir votre projet au fil du temps.
-      </p>
-    </div>
-  </div>
-
-
-  <div id="page5" class="z-30 px-20">
-    <!-- frame -- 300 -->
-    <div class="offer-sec2-content fourRevealUp  !top-[40%] mb-20">
-      <h1 class="w-[40%] text-3xl font-bold ">
-        Pourquoi faire un prévisionnel financier ?
-      </h1>
-      <p class="w-[40%]">
-        Tout d’abord, il est évident qu’il faut déjà le faire pour vous.
-        Nous devons étudier votre projet d’un point de vue financier
-        pour valider le business model (connaitre sa rentabilité) et
-        pouvoir évaluer les perspectives financières et le risque qui en
-        découle. Il vous permettra de connaitre les ressources
-        financières nécessaires pour mener à bien ce projet.
-      </p>
-    </div>
-
-    <div class="">
-      <p class="">
-        Vous pourrez ensuite vous en servir pour établir vos objectifs
-        et garder cet outil de référence tout on long de votre parcours
-        entrepreneurial. Croyez-nous, vous apprécierez pouvoir vous y
-        rattacher dans les moments mouvementés.
-      </p>
-      <p class="my-5">
-        Enfin, il a un intérêt certain pour les parties externes afin de
-        les aider à appréhender votre projet dans son ensemble, de les
-        convaincre de l’opportunité financière et donc attirer de
-        potentiels investisseurs. Il est toujours difficile de se
-        projeter et de réaliser un prévisionnel, on peut vite se sentir
-        perdu. Avec Kibyon, vous aurez un outil sur mesure clef en main
-        vous permettant de réaliser des simulations, des scénarios pour
-        ainsi trouver le bon équilibre et une alchimie parfaite entres
-        les divers flux qui constituent un prévisionnel financier et les
-        contraintes qui s’imposent à vous.
-      </p>
-    </div>
-
-  </div>
-  <div id="page6" class="z-30 px-20">
-    <!-- frame - 1100 -->
-    <div class="">
-           
-      <h1 class="text-4xl text-center font-bold ">
-          Avec Kibyon, gardez un œil sur l’avenir !
-        </h1>
-        <p class="my-5">
-            Il n’est pas toujours aisé de se projeter et de simuler le
-            chiffre d’affaires, les dépenses, les investissements etc que
-            vous aurez à 3 - 5ans. Nous vous proposons des scénarios adaptés
-            et réalistes, basés sur des indicateurs pertinents. L’idée est
-            de vous rendre autonome en vous expliquant les tenants et
-            aboutissants de l’outil que nous développons pour vous. Ainsi,
-            vous serez en mesure de tirer le maximum de bénéfice du
-            prévisionnel financier que nous mettrons à votre disposition et
-            pour lequel vous pourrez réaliser de nouveaux scenarios à cours
-            moyen et long terme. Nous tenons à faire preuve de pédagogie
-            pour vous permettre également d’expliquer les scenarios à de
-            potentiels investisseurs ou établissements financier.
-          </p>
-      </div>
-  </div>
-  <div id="page7" class="z-30 px-20">
-
-    <div>
-      <!-- frame -00  -->
-      <h1>Qu’est-ce qu’un Business plan ?</h1>
-
-     	<!-- Frame 160  -->
-      <p>
-        Contrairement aux idées reçues, on ne fait pas un business plan
-        uniquement dans le cadre d’une création d’entreprise mais
-        également pour tout projet nouveau au sein de cette dernière. Un
-        business plan adapté est de mise pour traduire les projections de
-        développement et démontrer la cohérence de votre stratégie à 360°
-        (R.H, finance, marketing…) quant aux objectifs et à la rentabilité
-        du projet. Il s’agit à la fois d’apporter de la clarté dans votre
-        projet, savoir précisément dans quelle direction vous allez et de
-        quelle façon.
-      </p>
-    </div>
-
-
-
-    <div>
-
-      <!-- frame -- 320 -->
-      <h1>Pourquoi faire un Business plan ?</h1>
-<!-- Frame 420  -->
-      <p>
-        Réaliser un business plan est avant tout primordial pour vous
-        permettre de valider la viabilité de votre projet et de vous aider
-        à le structurer en adoptant la meilleure stratégie. C’est
-        également un puissant outil incontournable pour convaincre vos
-        partenaires et financeurs de la pertinence de votre projet sur
-        tous les plans. Il ne faut donc pas prendre sa rédaction à la
-        légère et savoir mettre en avant les atouts du projet tout en
-        montrant que vous avez pris en compte les différents risques
-        possibles et que vous y êtes préparé.
-      </p>
-
-      <!-- 	Frame 730   -->
-      <p>
-        Nous vous proposons un business plan sur mesure adapté à votre
-        usage et qui correspondra aux attentes de vos partenaires
-        (banques, investisseurs, fournisseurs etc.). De par notre
-        expertise et notre savoir-faire, nous saurons réaliser le business
-        plan qui répond à vos besoins.
-      </p>
-    </div>
-  </div>
- 
-</section>
-
-
-
-  <div  class="tt">
-    <div>
-      <div id="Unique_offer" class="relative overflow-hidden">
-        <div class="card p-8 absolute lg:bottom-32 bottom-10 mx-5 lg:left-52 lg:w-[70%] border border-secondary z-10">
-          <h2 class="lg:text-5xl font-bold my-10 text-secondary">
-            Qu’est-ce que l’offre unique ?
-          </h2>
-          <p class=" lg:block lg:text-base text-base-100  text-xs text-justify">
-            Exprimez-nous vos difficultés, vos besoins et nous trouverons la
-            meilleure façon de vous aider. A travers cette offre nous voulons
-            apporter de la flexibilité et ainsi être au plus près de vos
-            préoccupations et des problématiques que vous rencontrez. Pour
-            autant, si cela sort de notre champ de compétence nous vous en
-            ferons part et tenterons de vous orienter vers les experts les plus
-            adaptés.
-          </p>
+        <div id="page4" class="z-30 px-20">
+          <!-- frame - 00 ----------------  -->
+          <div class="mt-20">
+            <h1 class="font-bold text-5xl">
+              Qu’est-ce qu’un prévisionnel financier ?
+            </h1>
+          </div>
+          <div class="mb-20">
+            <p class="w-[40%]">
+              Il est d’usage de dire que le prévisionnel financier est la partie
+              financière du business plan. C’est la modélisation chiffrée de
+              votre stratégie à 3-5ans. En simplifiant, le prévisionnel
+              financier, sera votre boussole qui révèlera les impacts financiers
+              à court, moyen et long terme des actions que vous entreprendrez
+              pour bâtir votre projet au fil du temps.
+            </p>
+          </div>
         </div>
 
-        <div >
-          <img src='./img/Offre unique/Offre unique without background.png' alt="" class="w-full absolute" />
-          <img src="img/Offre unique/Offre unique without object.jpg" alt="" class="w-full" />
+        <div id="page5" class="z-30 px-20">
+          <!-- frame -- 300 -->
+          <div class="offer-sec2-content fourRevealUp !top-[40%] mb-20">
+            <h1 class="w-[40%] text-3xl font-bold">
+              Pourquoi faire un prévisionnel financier ?
+            </h1>
+            <p class="w-[40%]">
+              Tout d’abord, il est évident qu’il faut déjà le faire pour vous.
+              Nous devons étudier votre projet d’un point de vue financier pour
+              valider le business model (connaitre sa rentabilité) et pouvoir
+              évaluer les perspectives financières et le risque qui en découle.
+              Il vous permettra de connaitre les ressources financières
+              nécessaires pour mener à bien ce projet.
+            </p>
+          </div>
+
+          <div class="">
+            <p class="">
+              Vous pourrez ensuite vous en servir pour établir vos objectifs et
+              garder cet outil de référence tout on long de votre parcours
+              entrepreneurial. Croyez-nous, vous apprécierez pouvoir vous y
+              rattacher dans les moments mouvementés.
+            </p>
+            <p class="my-5">
+              Enfin, il a un intérêt certain pour les parties externes afin de
+              les aider à appréhender votre projet dans son ensemble, de les
+              convaincre de l’opportunité financière et donc attirer de
+              potentiels investisseurs. Il est toujours difficile de se projeter
+              et de réaliser un prévisionnel, on peut vite se sentir perdu. Avec
+              Kibyon, vous aurez un outil sur mesure clef en main vous
+              permettant de réaliser des simulations, des scénarios pour ainsi
+              trouver le bon équilibre et une alchimie parfaite entres les
+              divers flux qui constituent un prévisionnel financier et les
+              contraintes qui s’imposent à vous.
+            </p>
+          </div>
+        </div>
+        <div id="page6" class="z-30 px-20">
+          <!-- frame - 1100 -->
+          <div class="">
+            <h1 class="text-4xl text-center font-bold">
+              Avec Kibyon, gardez un œil sur l’avenir !
+            </h1>
+            <p class="my-5">
+              Il n’est pas toujours aisé de se projeter et de simuler le chiffre
+              d’affaires, les dépenses, les investissements etc que vous aurez à
+              3 - 5ans. Nous vous proposons des scénarios adaptés et réalistes,
+              basés sur des indicateurs pertinents. L’idée est de vous rendre
+              autonome en vous expliquant les tenants et aboutissants de l’outil
+              que nous développons pour vous. Ainsi, vous serez en mesure de
+              tirer le maximum de bénéfice du prévisionnel financier que nous
+              mettrons à votre disposition et pour lequel vous pourrez réaliser
+              de nouveaux scenarios à cours moyen et long terme. Nous tenons à
+              faire preuve de pédagogie pour vous permettre également
+              d’expliquer les scenarios à de potentiels investisseurs ou
+              établissements financier.
+            </p>
+          </div>
+        </div>
+        <div id="page7" class="z-30 px-20">
+          <div>
+            <!-- frame -00  -->
+            <h1>Qu’est-ce qu’un Business plan ?</h1>
+
+            <!-- Frame 160  -->
+            <p>
+              Contrairement aux idées reçues, on ne fait pas un business plan
+              uniquement dans le cadre d’une création d’entreprise mais
+              également pour tout projet nouveau au sein de cette dernière. Un
+              business plan adapté est de mise pour traduire les projections de
+              développement et démontrer la cohérence de votre stratégie à 360°
+              (R.H, finance, marketing…) quant aux objectifs et à la rentabilité
+              du projet. Il s’agit à la fois d’apporter de la clarté dans votre
+              projet, savoir précisément dans quelle direction vous allez et de
+              quelle façon.
+            </p>
+          </div>
+
+          <div>
+            <!-- frame -- 320 -->
+            <h1>Pourquoi faire un Business plan ?</h1>
+            <!-- Frame 420  -->
+            <p>
+              Réaliser un business plan est avant tout primordial pour vous
+              permettre de valider la viabilité de votre projet et de vous aider
+              à le structurer en adoptant la meilleure stratégie. C’est
+              également un puissant outil incontournable pour convaincre vos
+              partenaires et financeurs de la pertinence de votre projet sur
+              tous les plans. Il ne faut donc pas prendre sa rédaction à la
+              légère et savoir mettre en avant les atouts du projet tout en
+              montrant que vous avez pris en compte les différents risques
+              possibles et que vous y êtes préparé.
+            </p>
+
+            <!-- 	Frame 730   -->
+            <p>
+              Nous vous proposons un business plan sur mesure adapté à votre
+              usage et qui correspondra aux attentes de vos partenaires
+              (banques, investisseurs, fournisseurs etc.). De par notre
+              expertise et notre savoir-faire, nous saurons réaliser le business
+              plan qui répond à vos besoins.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="tt">
+        <div>
+          <div id="Unique_offer" class="relative overflow-hidden">
+            <div
+              class="card p-8 absolute lg:bottom-32 bottom-10 mx-5 lg:left-52 lg:w-[70%] border border-secondary z-10"
+            >
+              <h2 class="lg:text-5xl font-bold my-10 text-secondary">
+                Qu’est-ce que l’offre unique ?
+              </h2>
+              <p
+                class="lg:block lg:text-base text-base-100 text-xs text-justify"
+              >
+                Exprimez-nous vos difficultés, vos besoins et nous trouverons la
+                meilleure façon de vous aider. A travers cette offre nous
+                voulons apporter de la flexibilité et ainsi être au plus près de
+                vos préoccupations et des problématiques que vous rencontrez.
+                Pour autant, si cela sort de notre champ de compétence nous vous
+                en ferons part et tenterons de vous orienter vers les experts
+                les plus adaptés.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="./img/Offre unique/Offre unique without background.png"
+                alt=""
+                class="w-full absolute"
+              />
+              <img
+                src="img/Offre unique/Offre unique without object.jpg"
+                alt=""
+                class="w-full"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
- <!-- footer====================================== -->
-<footer>
+      <!-- footer====================================== -->
+      <footer>
+        <div class="footerbg1 relative">
+          <div class="footerbg h-5"></div>
 
-  <div class="footerbg1 relative">
-    <div class="footerbg h-5"></div>
+          <div
+            class="footer grid lg:grid-cols-9 lg:gap-10 lg:px-20 px-16 py-20 bg-primary text-base-100 rounded-tl-[150px]"
+          >
+            <div class="lg:col-span-2">
+              <a href="/" class="font-semibold text-secondary">
+                <p class="-mt-6 text-5xl">KIBYON</p>
+              </a>
+              <p class="mt-5">
+                Cabinet de conseil innovant en stratégie d’entreprise et en
+                organisation
+              </p>
+              <p class="my-5">Ensemble, réalisons vos projets !</p>
+            </div>
 
-    <div class="footer  grid lg:grid-cols-9 lg:gap-10 lg:px-20 px-16 py-20 bg-primary text-base-100 rounded-tl-[150px]">
-      <div class="lg:col-span-2 ">
-        <a href="/" class="font-semibold  text-secondary">
-         <p class="-mt-6 text-5xl">KIBYON</p>
-        </a>
-        <p class="mt-5">
-          Cabinet de conseil innovant en stratégie d’entreprise et en
-          organisation
-        </p>
-        <p class="my-5">Ensemble, réalisons vos projets !</p>
-      </div>
+            <div class="lg:px-4 flex flex-col lg:col-span-2">
+              <span class="font-semibold text-xl mb-5 text-secondary">
+                Contactez-nous
+              </span>
+              <p class="text-justify">
+                Prêt à propulser votre entreprise vers le succès ?
+                Contactez-nous dès maintenant.
+              </p>
+              <p class="mt-3">
+                71 route de la prieurée 45100 Germigny des prés
+              </p>
+              <a
+                href="mailto:contact@kibyon.fr"
+                class="border-b-2 border-secondary"
+              >
+                contact@kibyon.fr
+              </a>
+              <a href="tel:+33 (0)645142367" class="mb-5"> +33 (0)645142367 </a>
+            </div>
 
-      <div class="lg:px-4 flex flex-col lg:col-span-2">
-        <span class="font-semibold text-xl mb-5 text-secondary">
-          Contactez-nous
-        </span>
-        <p class="text-justify">
-          Prêt à propulser votre entreprise vers le succès ? Contactez-nous
-          dès maintenant.
-        </p>
-        <p class="mt-3">
-          71 route de la prieurée 45100 Germigny des prés
-        </p>
-        <a
-          href="mailto:contact@kibyon.fr"
-          class="border-b-2 border-secondary"
-        >
-          contact@kibyon.fr
-        </a>
-        <a href="tel:+33 (0)645142367" class="mb-5">
-          +33 (0)645142367
-        </a>
-      </div>
+            <div class="flex flex-col lg:col-span-2">
+              <span class="font-semibold mb-5 text-xl text-secondary">
+                Navigation
+              </span>
+              <a
+                href="/"
+                class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
+              >
+                Accueil
+              </a>
+              <a
+                href="offer.html"
+                class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
+              >
+                Nos offres
+              </a>
+              <a
+                href="contact.html"
+                class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
+              >
+                Contact
+              </a>
+              <a
+                href="about.html"
+                class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
+              >
+                A propos de Kibyon
+              </a>
+              <a
+                href="legal.html"
+                class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
+              >
+                Mentions légales
+              </a>
+              <a
+                href="credits.html"
+                class="hover:scale-110 hover:pl-5 mb-5 duration-150 hover:text-secondary"
+              >
+                Crédits
+              </a>
+            </div>
 
-      <div class="flex flex-col lg:col-span-2">
-        <span class="font-semibold mb-5 text-xl text-secondary">
-          Navigation
-        </span>
-        <a href="/"
-          class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
-        >
-          Accueil
-      </a>
-        <a  
-          href="/offer"
-          class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
-        >
-          Nos offres
-        </a>
-        <a  
-          href="/contact"
-          class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
-        >
-          Contact
-        </a>
-        <a  
-          href="/about"
-          class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
-        >
-          A propos de Kibyon
-        </a>
-        <a  
-          href="/legal"
-          class="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
-        >
-          Mentions légales
-        </a>
-        <a  
-          href="/credits"
-          class="hover:scale-110 hover:pl-5 mb-5 duration-150 hover:text-secondary"
-        >
-          Crédits
-        </a>
-      </div>
-
-      <div class="lg:col-span-3">
-        <span class="font-semibold mb-5 text-xl text-secondary">
-          Rejoignez notre communauté
-        </span>
-        <div class="flex gap-5 text-3xl  my-4">
-          <a
-            href="/"
-            class="hover:scale-125 duration-150 hover:text-secondary"
+            <div class="lg:col-span-3">
+              <span class="font-semibold mb-5 text-xl text-secondary">
+                Rejoignez notre communauté
+              </span>
+              <div class="flex gap-5 text-3xl my-4">
+                <a
+                  href="/"
+                  class="hover:scale-125 duration-150 hover:text-secondary"
+                >
+                  <BsInstagram />
+                </a>
+                <a
+                  href="/"
+                  class="hover:scale-125 duration-150 hover:text-secondary"
+                >
+                  <BsFacebook />
+                </a>
+                <a
+                  href="/"
+                  class="hover:scale-125 duration-150 hover:text-secondary"
+                >
+                  <BsLinkedin />
+                </a>
+                <a
+                  href="/"
+                  class="hover:scale-125 duration-150 hover:text-secondary"
+                >
+                  <BsTwitter />
+                </a>
+                <a
+                  href="/"
+                  class="hover:scale-125 duration-150 hover:text-secondary"
+                >
+                  <FaTiktok />
+                </a>
+              </div>
+              <p class="mt-10">
+                Rendons le conseil accessible et adapté à chacun.
+              </p>
+              <p>Ensemble, bâtissons les entreprises de demain.</p>
+            </div>
+          </div>
+          <div class="bg-primary">
+            <div class="border-t mx-20"></div>
+          </div>
+          <div
+            class="items-center justify-center flex px-10 py-4 bg-primary text-base-100"
           >
-            <BsInstagram />
-          </a>
-          <a
-            href="/"
-            class="hover:scale-125 duration-150 hover:text-secondary"
-          >
-            <BsFacebook />
-          </a>
-          <a
-            href="/"
-            class="hover:scale-125 duration-150 hover:text-secondary"
-          >
-            <BsLinkedin />
-          </a>
-          <a
-            href="/"
-            class="hover:scale-125 duration-150 hover:text-secondary"
-          >
-            <BsTwitter />
-          </a>
-          <a
-            href="/"
-            class="hover:scale-125 duration-150 hover:text-secondary"
-          >
-            <FaTiktok />
-          </a>
+            <p id="dynamic-footer"></p>
+          </div>
         </div>
-        <p class="mt-10">
-          Rendons le conseil accessible et adapté à chacun. 
-        </p>
-        <p>
-        Ensemble, bâtissons les entreprises de demain.
-        </p>
-      </div>
+      </footer>
     </div>
-    <div class="bg-primary">
-      <div class="border-t mx-20"></div>
-    </div>
-    <div class="items-center justify-center flex px-10 py-4 bg-primary text-base-100">
-      <p>Kibyon © 2023 - All Rights Reserved</p>
-    </div>
-  </div>
-</footer>
 
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+      integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
+    <script src="script.js"></script>
 
+    <!-- footer----------------- -->
+    <script>
+      function createDynamicFooter() {
+        const footer = document.getElementById("dynamic-footer");
+        const currentYear = new Date().getFullYear();
+        footer.textContent = `Kibyon © ${currentYear} - All Rights Reserved`;
+      }
 
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
-  integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
-  integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-
-<script src="script.js"></script>
+      // Call the function to create the dynamic footer
+      createDynamicFooter();
+    </script>
 
 
-<!-- =================================== -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-  <script>
 
 
-const swiper = new Swiper('.swiper', {
+<!-- font awesome -----------  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 
+    <!-- =====slider============================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-  loop: true,
+    <script>
+      const swiper = new Swiper(".swiper", {
+        loop: true,
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+        // Navigation arrows
+        navigation: {
+          nextEl: ".next",
+          prevEl: ".prev",
+        },
 
-  effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      coverflowEffect: {
-        rotate: 10,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        coverflowEffect: {
+          rotate: 10,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          
+        },
 
-      breakpoints:{
-          390: {
+        breakpoints: {
+          360: {
             slidesPerView: 1,
             spaceBetween: 20,
+          },
+          390: {
+            slidesPerView: 1,
+            spaceBetween: 10,
           },
           768: {
             slidesPerView: 2,
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 3, 
-            spaceBetween: 170,
+            slidesPerView: 3,
+            spaceBetween: 160,
           },
-         
-        }
-   
-       
-       
-
-})
-    
-  </script>
-  <script>
-
-
-
-
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const fadeTextElements = document.querySelectorAll('.fade-text');
-
-    fadeTextElements.forEach((element) => {
-      gsap.to(element, {
-        opacity: 1,
-        
-        scrollTrigger: {
-          trigger: element,
-          markers: true,
-          start: 'top 60%',
-          end: 'bottom 30%',
-          toggleActions: 'play none reverse none',
-          onEnter: () => {
-            element.style.opacity = 1;
-            element.style.pointerEvents = 'auto';
-            
-          },
-          onLeave: () => {
-            element.style.opacity = 0;
-            element.style.pointerEvents = 'none';
-            
-          },
-          onEnterBack: () => {
-            element.style.opacity = 1;
-            element.style.pointerEvents = 'auto';
-            
-          },
-          onLeaveBack: () => {
-            element.style.opacity = 0;
-            element.style.pointerEvents = 'none';
-            
-          },
-         
         },
       });
-    });
+    </script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
 
-  </script>
-</body>
+      const fadeTextElements = document.querySelectorAll(".fade-text");
+
+      fadeTextElements.forEach((element) => {
+        gsap.to(element, {
+          opacity: 1,
+
+          scrollTrigger: {
+            trigger: element,
+            markers: true,
+            start: "top 60%",
+            end: "bottom 30%",
+            toggleActions: "play none reverse none",
+            onEnter: () => {
+              element.style.opacity = 1;
+              element.style.pointerEvents = "auto";
+            },
+            onLeave: () => {
+              element.style.opacity = 0;
+              element.style.pointerEvents = "none";
+            },
+            onEnterBack: () => {
+              element.style.opacity = 1;
+              element.style.pointerEvents = "auto";
+            },
+            onLeaveBack: () => {
+              element.style.opacity = 0;
+              element.style.pointerEvents = "none";
+            },
+          },
+        });
+      });
+    </script>
+  </body>
 </html>
