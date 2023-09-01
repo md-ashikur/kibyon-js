@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  width: 100%;
+
+}
+
+.box-container {
+  overflow: hidden;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section {
+  height: 50vh;
+  text-align: center;
+  font-size: 2em;
+  position: relative;
+}
+
+
+.section p {
+  position: relative;
+}
+
+
+
+
+.section-description {
+  z-index: 1001;
+  max-width: 1200px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+
+  width: 100%;
+  background-color: rgb(122, 218, 13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.section-description .quote span {
+  font-size: 30px;
+  
+}
+
+
+.line {
+  width: 70%;
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+span {
+  position: absolute;
+  font-size: 3rem;
+  line-height: 2rem;
+}
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <section class="top">
+          <div class="section-description">
+            <div class="line quote">
+              <span>LOREM IPSUM LOREM IPSUM</span>
+            </div>
+          
+          </div>
+        </section>
+        <section class="mid">     
+          <div class="section-description">
+          
+            
+            <div class="line quote">
+              <span>  Vous serez également en mesure d’identifier les risques et chances
+                de succès. L’étude de marché va vous permettre de mieux connaitre
+                l’environnement dans lequel vous évoluez, de vous rassurer sur
+                l’orientation à prendre pour maximiser les chances de succès et de
+                rassurer également l’ensemble des parties prenantes (associés,
+                financeurs, organismes tiers…)</span>
+            </div>
+           
+          </div>
+        </section>
+
+        <section class="bottom">
+          <div class="section-description">
+            
+            <div class="line quote">
+              <span>LOREM IPSUM LOREM IPSUM</span>
+            </div>
+           
+          </div>
+        </section>
+        
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+        integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+        integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+
+      <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+const sections = gsap.utils.toArray("section");
+
+sections.forEach((section, index) => {
+  const text = section.querySelector("p"),
+    linespans = gsap.utils.toArray(".line span");
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      pin: true,
+    //   anticipatePin: 1,
+    //   fastScrollEnd: true,
+    //   precentOverlaps: true,
+      scrub: 1,
+      markers: true,
+      start: "top top",
+      end: "+=1500"
+    }
+  });
+
+  linespans.forEach((linespan) => {
+tl
+    .fromTo(linespan, { 
+      y: 100,
+      autoAlpha: 0,
+      duration: 2,
+      ease: "ease" },
+      { 
+      y: 0,
+      autoAlpha: 1,
+      duration: 1,
+      ease: "ease" }, 0);
+
+      tl
+      .fromTo(linespan, { 
+        y: 0,
+        autoAlpha: 1,
+        duration: 3,
+        ease: "ease" },
+        { 
+        y: 100,
+        autoAlpha: 0,
+        duration: 2,
+        ease: "ease" 
+      }, 4);
+  });
+
+if (index > 0) {
+      tl.from(text, { opacity: 0, y: 100 }).from(section, { opacity: 0, ease: "ease", duration: 5 }, 0.1);
+  }
+  if (index < sections.length - 1) {
+    tl.to(text, { opacity: 0, y: -100, ease: "power1.in" })
+    .to(section, { opacity: 0, ease: "ease", duration: 2 }, 5);
+  }
+});
+      </script>
+</body>
+</html>
