@@ -94,16 +94,14 @@
       <div class="h-screen">
         <img src="/img/intro welcome page background.png"   class="object-cover lg:object-none h-full lg:h-screen lg:w-full" alt="">
       </div>
+
       <div class="">
         <section>
           <!-- shoe section start -->
 
           <div class="grid lg:grid-cols-2 gap-5 h-screen px-5 lg:px-20 pt-10">
-            <div class="">
-              <video
-                src="../kibyon-js/Videos/maps blue BG - Made with Clipchamp.mp4"
-                class="h-52 w-52"
-              ></video>
+            <div class="flex justify-between items-center overflow-hidden">
+             <img src="./img/shoes.png" alt="" class="w-full h-auto scale-125">
             </div>
             <div class="flex justify-center items-center">
               <div>
@@ -139,7 +137,18 @@
               </div>
             </div>
 
-            <div></div>
+            <div class="flex items-center justify-center">
+              <div id="bound-one" class="scroll-bound">
+                <div class="content">
+                
+                   <video width="600" muted preload>
+                    <source src="./Videos/Plane  trnasparent _ home page 04-23 VF_VP9.webm" type="video/webm">
+                    <p>Your user agent does not support the HTML5 Video element.</p>
+                  </video>
+                </div>
+              </div>
+              
+            </div>
           </div>
           <!-- plane section end -->
 
@@ -147,7 +156,18 @@
           <div
             class="bg-[#001597] text-white grid lg:grid-cols-2 gap-5 h-screen px-5 lg:px-20 pt-28"
           >
-            <div></div>
+          <div class="flex items-center justify-center">
+            <div id="bound-one" class="scroll-bound">
+              <div class="content">
+              
+                 <video width="600" muted preload>
+                  <source src="./Videos/hand blue BG V2 - Made with Clipchamp (1).mp4" type="video/webm">
+                  <p>Your user agent does not support the HTML5 Video element.</p>
+                </video>
+              </div>
+            </div>
+            
+          </div>
             <div class="flex justify-center items-center">
               <div>
                 <h1 class="text-5xl font-semibold my-4 max-w-[350px]">
@@ -186,7 +206,16 @@
                 </p>
               </div>
             </div>
-            <div></div>
+            <div class="flex items-center justify-center">
+              <div id="bound-one" class="scroll-bound">
+                <div class="content">
+                
+                   <video width="600" muted preload>
+                    <source src="./Videos/Maps transparent VF (quick time) 27-04_VP9.webm" type="video/webm">
+                    <p>Your user agent does not support the HTML5 Video element.</p>
+                  </video>
+                </div>
+              </div>
           </div>
           <!-- map section end -->
         </section>
@@ -467,6 +496,12 @@
 
     </div>
 
+<!-- ==================================================== -->
+
+
+<script>
+  
+</script>
 
       <!-- font awesome -----------  -->
       <script
@@ -513,7 +548,7 @@
 
           scrollTrigger: {
             trigger: element,
-            markers: true,
+            // markers: true,
             start: "top 60%",
             end: "bottom 30%",
             toggleActions: "play none reverse none",

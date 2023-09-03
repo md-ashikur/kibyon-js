@@ -149,7 +149,7 @@
           <div>
             <div class="mb-5 flex gap-5">
               <div
-                class="text-4xl flex justify-center items-center text-primary w-16 h-16 p-3 bg-base-100 rounded-full"
+                class="text-4xl flex justify-center items-center text-primary w-16 lg:h-16 h-14 p-3 bg-base-100 rounded-full"
               >
                 <i class="fa-solid fa-check-double"></i>
               </div>
@@ -173,9 +173,9 @@
 
             <div class="mb-5 flex gap-5">
               <div
-                class="text-4xl flex justify-center items-center text-primary w-16 h-16 p-3 bg-base-100 rounded-full"
+                class="text-4xl flex justify-center items-center text-primary w-20 lg:w-16 h-16  p-3 bg-base-100 rounded-full "
               >
-                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-location-dot "></i>
               </div>
 
               <div>
@@ -223,7 +223,7 @@
                   class="border-b-2"
                   required="required"
                   type="text"
-                  name="name"
+                  name="firstName"
                 />
                 <span>NOM</span>
               </div>
@@ -233,7 +233,7 @@
                   class="border-b-2"
                   required="required"
                   type="text"
-                  name="surename"
+                  name="lastName"
                 />
                 <span>Prénom</span>
               </div>
@@ -402,6 +402,30 @@
   **javascript part **
   *********************** -->
 
+  <script>
+    const sendEmail = (e) =>{
+    e.preventDefault();
+
+    emailjs.sendForm('service_15z0q77', 'template_hjbp0d8', form.current, 'COp1ZkL4gXjOM7JJx')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+
+      toast.success('Your message sent successfully', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      
+  }
+  </script>
 
     <!-- footer----------------- -->
     <script>
@@ -428,7 +452,7 @@
     ></script>
     <script type="text/javascript">
       (function () {
-        emailjs.init("COp1ZkL4gXjOM7JJx");
+        emailjs.init("pp_-UYRZf5K43m3Um");
       })();
     </script>
   </body>
