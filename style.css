@@ -313,19 +313,14 @@ z-index: 30;
    
 }
 #page6{
-    height: 1300vh;
+    height: 1500vh;
     position: relative;
     width: 100vw;
    
 }
 
 /* video--3---------------- */
-#page7{
-    height: 750vh;
-    position: relative;
-    width: 100vw;
 
-}
 
 
 canvas{
